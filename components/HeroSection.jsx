@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import TopBar from "@/components/TopBar";
-import Container from "@/components/container";
+import Container from "@/components/Container";
 import Image from "next/image";
 
 const HeroSection = ({ title, description, backgroundImage }) => {

@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import PhotoGrid from "@/components/PhotoGrid";
-import Container from "@/components/container";
+import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 
 

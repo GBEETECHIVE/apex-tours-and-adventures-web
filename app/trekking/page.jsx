@@ -1,4 +1,4 @@
-import Container from "@/components/container";
+import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PhotoGrid from "@/components/PhotoGrid";
@@ -15,7 +15,7 @@ const trekkingImages = [
   { src: "/assets/treaking/treaking7.png", alt: "Snow capped peaks" },
   { src: "/assets/treaking/treaking8.png", alt: "Valley mountain view" },
   { src: "/assets/treaking/treaking9.png", alt: "Winter river trekking" },
- ];
+];
 
 const Trekking = () => {
   return (

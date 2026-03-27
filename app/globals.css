@@ -4,3 +4,6 @@
   --font-poppins: var(--font-poppins);
   --font-roboto: var(--font-roboto);
 }
+* {
+  font-family: var(--font-poppins);
+}
