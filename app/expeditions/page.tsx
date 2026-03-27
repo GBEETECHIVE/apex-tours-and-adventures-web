@@ -1,19 +1,22 @@
- import HeroSection from "@/components/HeroSection";
+ import Footer from "@/components/Footer";
+import Container from "@/components/container";
+import HeroSection from "@/components/HeroSection";
 import PhotoGrid from "@/components/PhotoGrid";
 
 // Replace these with actual imported images from your assets folder
 // import expeditionsHero from "../assets/expeditions/hero.jpg";
 
 const expeditionImages = [
-  { src: "/images/expeditions/1.jpg", alt: "Snow mountain expedition" },
-  { src: "/images/expeditions/2.jpg", alt: "Glacier mountain view" },
-  { src: "/images/expeditions/3.jpg", alt: "Summit climb" },
-  { src: "/images/expeditions/4.jpg", alt: "Mountain base camp" },
-  { src: "/images/expeditions/5.jpg", alt: "Rock spire peak" },
-  { src: "/images/expeditions/6.jpg", alt: "Karakoram range" },
-  { src: "/images/expeditions/7.jpg", alt: "High altitude camp" },
-  { src: "/images/expeditions/8.jpg", alt: "Mountain summit view" },
-  { src: "/images/expeditions/9.jpg", alt: "Expedition climbers" },
+  { src: "/assets/expedition/expedition1.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition2.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition3.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition4.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition5.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition6.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition7.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition8.png", alt: "Snow mountain expedition" },
+  { src: "/assets/expedition/expedition9.png", alt: "Snow mountain expedition" },
+    
 ];
 
 const Expeditions = () => {
@@ -22,9 +25,12 @@ const Expeditions = () => {
       <HeroSection
         title="Expeditions"
         description="Embark on expertly guided expeditions into remote and extraordinary terrains. Push your limits, explore the unknown, and experience true adventure at its highest level."
-        backgroundImage="/images/expeditions/hero.jpg"
+        backgroundImage="/assets/Expeditions.png"
       />
+       <Container className={"mt-10"}>
       <PhotoGrid images={expeditionImages} />
+             </Container>
+            <Footer />
     </>
   );
 };
