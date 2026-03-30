@@ -1,17 +1,19 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 const WHY_BOOK = [
-  "No hidden extra charge",
-  "Customer care available 24/7",
-  "Hand-picked Tours & Activities",
-  "Free Travel Insurance",
+  { icon: "dollar.png", label: "No-hassle best price guarantee" },
+  { icon: "music.png", label: "Customer care available 24/7" },
+  { icon: "star1.png", label: "Hand-picked Tours & Activities" },
+  { icon: "round.png", label: "Free Travel Insurance" },
 ];
 
-export default function BookingWidget({ price }) {
-  const [date, setDate] = useState("");
-  const [people, setPeople] = useState(1);
+export default function BookingWidget({ price = 350 }) {
+  const [date, setDate] = useState("2026-01-13");
+  const [people, setPeople] = useState("");
   const [bookingDone, setBookingDone] = useState(false);
+  const [wishlisted, setWishlisted] = useState(false);
 
   const handleBooking = () => {
     if (!date) return alert("Please select a date!");
@@ -19,270 +21,425 @@ export default function BookingWidget({ price }) {
     setTimeout(() => setBookingDone(false), 3000);
   };
 
+  const formatDate = (val) => {
+    if (!val) return "";
+    const d = new Date(val);
+    return d.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  };
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      {/* Price & Book Card */}
+    <div
+      style={{
+        fontFamily: "'Segoe UI', sans-serif",
+        maxWidth: 320,
+        margin: "0 auto",
+      }}
+    >
+      {/* ── MAIN CARD ── */}
       <div
         style={{
-          background: "#fff",
-          border: "1px solid #e8e8e8",
-          borderRadius: 12,
           overflow: "hidden",
-          boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+          boxShadow: "0 4px 24px rgba(0,0,0,0.13)",
+          marginBottom: 10,
         }}
+        className="rounded-[10]"
       >
         {/* Header */}
         <div
           style={{
-            background: "#1a1a2e",
-            padding: "14px 20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            background: "#1a2e5a",
           }}
         >
-          <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}>
+          <div
+            style={{
+              background: "#2C487AE5",
+              color: "#fff",
+              fontSize: 13,
+              fontWeight: 600,
+              marginBottom: 10,
+              padding: "10px 16px",
+            }}
+          >
             Book Now
-          </span>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-            <span style={{ color: "#aaa", fontSize: 12 }}>from</span>
-            <span style={{ color: "#FFB156", fontWeight: 800, fontSize: 22 }}>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "10px 16px",
+            }}
+          >
+            {/* Tag icon */}
+            <Image
+              src="/assets/icons/book1.png"
+              alt="Start icon"
+              width={30}
+              height={30}
+              className="max-w-[20px] w-full h-auto"
+            />
+            <span style={{ color: "#c8d0e0", fontSize: 13 }}>From</span>
+            <span
+              style={{
+                color: "#fff",
+                fontSize: 30,
+                fontWeight: 800,
+                lineHeight: 1,
+              }}
+            >
               ${price}
             </span>
+            {/* Info icon */}
+            <Image
+              src="/assets/icons/book.png"
+              alt="Start icon"
+              width={30}
+              height={30}
+              className="max-w-[20px] w-full h-auto"
+            />
           </div>
         </div>
 
-        {/* Form */}
-        <div style={{ padding: "20px" }}>
-          {/* Date */}
-          <div style={{ marginBottom: 14 }}>
-            <label
-              style={{
-                display: "block",
-                fontSize: 12,
-                color: "#888",
-                marginBottom: 6,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: 0.5,
-              }}
-            >
-              Date
-            </label>
-            <div style={{ position: "relative" }}>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "10px 12px",
-                  border: "1px solid #e0e0e0",
-                  borderRadius: 8,
-                  fontSize: 14,
-                  color: "#333",
-                  outline: "none",
-                  boxSizing: "border-box",
-                  background: "#fafafa",
-                }}
+        {/* White body */}
+        <div style={{ background: "#fff" }}>
+          {/* Date Row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              padding: "16px 16px 0",
+              gap: 12,
+            }}
+          >
+            {/* Calendar icon */}
+            <div style={{ paddingTop: 2 }}>
+              <Image
+                src="/assets/icons/calendar.png"
+                alt="Start icon"
+                width={30}
+                height={30}
+                className="max-w-[20px] w-full h-auto"
               />
+            </div>
+            <div style={{ flex: 1 }}>
+              {/* Custom date select look */}
+              <div
+                style={{
+                  border: "1px solid #dde3ee",
+                  borderRadius: 6,
+                  padding: "9px 12px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  position: "relative",
+                }}
+              >
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  style={{
+                    border: "none",
+                    outline: "none",
+                    fontSize: 13,
+                    color: "#1a2e5a",
+                    fontWeight: 500,
+                    background: "transparent",
+                    width: "100%",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  fontSize: 11,
+                  color: "#999",
+                  marginTop: 5,
+                  paddingLeft: 2,
+                }}
+              >
+                Available: 10 seats
+              </div>
             </div>
           </div>
 
-          {/* Number of People */}
-          <div style={{ marginBottom: 20 }}>
-            <label
+          {/* People Row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "0 16px",
+              gap: 12,
+              marginTop: 16,
+            }}
+          >
+            <Image
+              src="/assets/icons/people.png"
+              alt="Start icon"
+              width={30}
+              height={30}
+              className="max-w-[20px] w-full h-auto"
+            />
+
+            <div style={{ flex: 1 }}>
+              <select
+                value={people}
+                onChange={(e) => setPeople(e.target.value)}
+                style={{
+                  width: "100%",
+                  border: "1px solid #dde3ee",
+                  borderRadius: 6,
+                  padding: "9px 12px",
+                  fontSize: 13,
+                  color: people ? "#1a2e5a" : "#aaa",
+                  fontWeight: 500,
+                  background: "#fff",
+                  outline: "none",
+                  cursor: "pointer",
+                  appearance: "auto",
+                }}
+              >
+                <option value="" disabled>
+                  Number Of People
+                </option>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                  <option key={n} value={n}>
+                    {n} {n === 1 ? "Person" : "People"}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Button Row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "0 16px 16px",
+              gap: 12,
+              marginTop: 16,
+            }}
+          >
+            <Image
+              src="/assets/icons/light.png"
+              alt="Start icon"
+              width={20}
+              height={20}
+              className="max-w-[15px] w-full h-auto"
+            />
+            <button
+              onClick={handleBooking}
               style={{
-                display: "block",
-                fontSize: 12,
-                color: "#888",
-                marginBottom: 6,
-                fontWeight: 600,
+                flex: 1,
+                padding: "13px 0",
+                background: bookingDone ? "#2e7d32" : "#1a2e5a",
+                color: "#fff",
+                border: "none",
+                borderRadius: 7,
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: 1.2,
+                cursor: "pointer",
+                transition: "background 0.3s",
                 textTransform: "uppercase",
-                letterSpacing: 0.5,
               }}
             >
-              Number of People
-            </label>
+              {bookingDone ? "✓ Booking Confirmed!" : "PROCEED BOOKING"}
+            </button>
+          </div>
+
+          {/* Wishlist & Views */}
+          <div className="flex justify-center px-[16px] pb-[20px] gap-2 items-center">
+            <button
+              onClick={() => setWishlisted(!wishlisted)}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                fontSize: 12,
+                color: wishlisted ? "#e74c3c" : "#666",
+                fontWeight: 500,
+                padding: 0,
+              }}
+            >
+              <Image
+                src="/assets/icons/heart.png"
+                alt="Start icon"
+                width={20}
+                height={20}
+                className="max-w-[15px] w-full h-auto"
+              />
+              Save To Wish List
+            </button>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                border: "1px solid #e0e0e0",
-                borderRadius: 8,
-                overflow: "hidden",
-                background: "#fafafa",
+                gap: 5,
+                fontSize: 12,
+                color: "#888",
               }}
             >
-              <button
-                onClick={() => setPeople(Math.max(1, people - 1))}
-                style={{
-                  width: 40,
-                  height: 40,
-                  border: "none",
-                  background: "none",
-                  fontSize: 20,
-                  cursor: "pointer",
-                  color: "#555",
-                }}
-              >
-                −
-              </button>
-              <span
-                style={{
-                  flex: 1,
-                  textAlign: "center",
-                  fontWeight: 600,
-                  fontSize: 15,
-                }}
-              >
-                {people}
-              </span>
-              <button
-                onClick={() => setPeople(people + 1)}
-                style={{
-                  width: 40,
-                  height: 40,
-                  border: "none",
-                  background: "none",
-                  fontSize: 20,
-                  cursor: "pointer",
-                  color: "#555",
-                }}
-              >
-                +
-              </button>
+              <Image
+                src="/assets/icons/eye.png"
+                alt="Start icon"
+                width={20}
+                height={20}
+                className="max-w-[15px] w-full h-auto"
+              />
+              326
             </div>
-          </div>
-
-          {/* Book Button */}
-          <button
-            onClick={handleBooking}
-            style={{
-              width: "100%",
-              padding: "14px",
-              background: bookingDone ? "#4caf50" : "#FFB156",
-              color: "#fff",
-              border: "none",
-              borderRadius: 8,
-              fontSize: 14,
-              fontWeight: 700,
-              cursor: "pointer",
-              letterSpacing: 0.5,
-              transition: "background 0.3s",
-            }}
-          >
-            {bookingDone ? "✓ Booking Confirmed!" : "PROCEED BOOK NOW"}
-          </button>
-
-          {/* Total */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: 12,
-              fontSize: 13,
-              color: "#888",
-            }}
-          >
-            <span>Save to Wish List</span>
-            <span>💬 225</span>
           </div>
         </div>
       </div>
 
-      {/* Why Book With Us */}
+      {/* ── WHY BOOK WITH US ── */}
       <div
         style={{
-          background: "#fff",
-          border: "1px solid #e8e8e8",
-          borderRadius: 12,
-          padding: "18px 20px",
-          boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+          background: "#f4f6fb",
+          borderRadius: 10,
+          padding: "16px 18px",
+          marginBottom: 10,
+          boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
         }}
       >
         <h4
           style={{
-            fontSize: 14,
+            fontSize: 13,
             fontWeight: 700,
-            color: "#1a1a2e",
-            marginBottom: 14,
-            margin: "0 0 14px 0",
+            color: "#1a2e5a",
+            margin: "0 0 12px 0",
+            letterSpacing: 0.2,
           }}
         >
           Why Book With Us?
         </h4>
         {WHY_BOOK.map((item, i) => (
+          <div key={i}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                padding: "10px 0",
+              }}
+            >
+              <Image
+                src={`/assets/icons/${item.icon}`}
+                alt="Start icon"
+                width={20}
+                height={20}
+                className="max-w-[15px] w-full h-auto "
+              />
+
+              <span style={{ fontSize: 13, color: "#444", fontWeight: 400 }}>
+                {item.label}
+              </span>
+            </div>
+            {i < WHY_BOOK.length - 1 && (
+              <div style={{ height: 1, background: "#e2e7f0" }} />
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div
+        style={{
+          borderRadius: 10,
+          overflow: "hidden",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url(/assets/form.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center bottom",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            padding: "20px 18px 22px",
+          }}
+        >
+          <h4
+            style={{
+              fontSize: 15,
+              fontWeight: 700,
+              color: "#fff",
+              margin: "0 0 6px 0",
+            }}
+          >
+            Get a Question?
+          </h4>
+          <p
+            style={{
+              fontSize: 12,
+              color: "#c8d0e0",
+              margin: "0 0 16px 0",
+              lineHeight: 1.6,
+            }}
+          >
+            Do not hesitate to give us a call. We are an expert team and we are
+            happy to talk to you.
+          </p>
           <div
-            key={i}
             style={{
               display: "flex",
               alignItems: "center",
               gap: 10,
               marginBottom: 10,
-              fontSize: 13,
-              color: "#555",
             }}
           >
-            <span
-              style={{
-                width: 20,
-                height: 20,
-                background: "#fff3e0",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 11,
-                flexShrink: 0,
-              }}
-            >
-              ✓
+            <div>
+              <Image
+                src={`/assets/icons/call.png`}
+                alt="Start icon"
+                width={20}
+                height={20}
+                className="max-w-[15px] w-full h-auto "
+              />
+            </div>
+            <span style={{ color: "#fff", fontSize: 14, fontWeight: 600 }}>
+              +92 347 4598096
             </span>
-            {item}
           </div>
-        ))}
-      </div>
-
-      {/* Got a Question */}
-      <div
-        style={{
-          background: "#fff",
-          border: "1px solid #e8e8e8",
-          borderRadius: 12,
-          padding: "18px 20px",
-          boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
-        }}
-      >
-        <h4
-          style={{
-            fontSize: 14,
-            fontWeight: 700,
-            color: "#1a1a2e",
-            margin: "0 0 6px 0",
-          }}
-        >
-          Got a Question?
-        </h4>
-        <p style={{ fontSize: 12, color: "#888", margin: "0 0 12px 0" }}>
-          Do not hesitate to give us a call. We are an expert team and we are
-          happy to talk to you.
-        </p>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            marginBottom: 8,
-            fontSize: 14,
-            fontWeight: 600,
-            color: "#1a1a2e",
-          }}
-        >
-          📞 +92 347 4598098
-        </div>
-        <div style={{ fontSize: 13, color: "#FFB156" }}>
-          ✉ info@apextours.com
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <div>
+              <Image
+                src={`/assets/icons/mail.png`}
+                alt="Start icon"
+                width={20}
+                height={20}
+                className="max-w-[15px] w-full h-auto "
+              />
+            </div>
+            <span
+              className="text-white underline"
+              style={{ fontSize: 13, fontWeight: 500 }}
+            >
+              info@apexwonders.com
+            </span>
+          </div>
         </div>
       </div>
     </div>

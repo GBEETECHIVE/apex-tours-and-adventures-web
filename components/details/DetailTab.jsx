@@ -1,179 +1,228 @@
+"use client";
+
 const SectionHeading = ({ children }) => (
-  <h3
+  <h2
     style={{
-      fontSize: 16,
-      fontWeight: 700,
-      color: "#1a1a2e",
+      fontSize: 22,
+      fontWeight: 900,
+      color: "#111",
       textTransform: "uppercase",
       letterSpacing: 1,
-      marginBottom: 16,
-      marginTop: 32,
-      paddingBottom: 8,
-      borderBottom: "2px solid #f0f0f0",
+      margin: "36px 0 14px",
+      padding: 0,
     }}
   >
     {children}
-  </h3>
+  </h2>
 );
+
+function splitLabel(str) {
+  const idx = str.indexOf(":");
+  if (idx === -1) return { label: null, rest: str };
+  return { label: str.slice(0, idx).trim(), rest: str.slice(idx + 1).trim() };
+}
+
+function FaqAnswer({ faq }) {
+  if (!faq.a) return null;
+
+  if (faq.format === "numbered") {
+    const items = faq.a
+      .split(/\n/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    return (
+      <ol style={{ margin: 0, paddingLeft: 20 }}>
+        {items.map((item, i) => (
+          <li
+            key={i}
+            style={{
+              fontSize: 14,
+              color: "#555",
+              lineHeight: 1.8,
+              marginBottom: 10,
+            }}
+          >
+            {item}
+          </li>
+        ))}
+      </ol>
+    );
+  }
+
+  if (faq.format === "bullets") {
+    const items = faq.a
+      .split(/\n/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    return (
+      <>
+        {faq.intro && (
+          <p
+            style={{
+              fontSize: 14,
+              color: "#555",
+              margin: "0 0 6px 0",
+              lineHeight: 1.8,
+            }}
+          >
+            {faq.intro}
+          </p>
+        )}
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          {items.map((item, i) => (
+            <li
+              key={i}
+              style={{
+                fontSize: 14,
+                color: "#555",
+                lineHeight: 1.8,
+                marginBottom: 4,
+              }}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
+  return (
+    <p style={{ fontSize: 14, color: "#555", margin: 0, lineHeight: 1.85 }}>
+      {faq.a}
+    </p>
+  );
+}
 
 export default function DetailTab({ tour }) {
   return (
-    <div>
-      {/* Tour Title & Rating */}
-      <h2
-        style={{
-          fontSize: 22,
-          color: "#1a1a2e",
-          marginBottom: 8,
-          fontWeight: 700,
-        }}
-      >
-        {tour.title}
-      </h2>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 6,
-          marginBottom: 20,
-        }}
-      >
-        <span style={{ color: "#FFB156", fontSize: 16 }}>
-          {"★".repeat(tour.rating)}
-          {"☆".repeat(5 - tour.rating)}
-        </span>
-        <span style={{ color: "#888", fontSize: 13 }}>
-          ({tour.reviews} Reviews)
-        </span>
-      </div>
-
-      <p
-        style={{
-          color: "#555",
-          lineHeight: 1.85,
-          fontSize: 15,
-          marginBottom: 0,
-        }}
-      >
+    <div style={{ fontFamily: "inherit", color: "#333", lineHeight: 1.8 }}>
+      {/* DETAIL */}
+      <SectionHeading>Detail</SectionHeading>
+      <p style={{ fontSize: 14, color: "#444", margin: "0 0 8px 0" }}>
+        Two Days {tour.city} Sightseeing Tour
+      </p>
+      <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
         {tour.description}
       </p>
 
-      {/* Itinerary */}
+      {/* ITINERARY */}
       <SectionHeading>Itinerary</SectionHeading>
-      {tour.itinerary.map((item) => (
-        <div key={item.day} style={{ marginBottom: 20 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 8,
-            }}
-          >
-            <span
-              style={{
-                background: "#FFB156",
-                color: "#fff",
-                borderRadius: 6,
-                padding: "2px 10px",
-                fontSize: 12,
-                fontWeight: 700,
-              }}
+      {tour.itinerary.map((item) => {
+        const sentences = item.description
+          .split(/(?<=\.)\s+/)
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const noBullet = sentences.slice(0, 2);
+        const withBullet = sentences.slice(2);
+
+        return (
+          <div key={item.day} style={{ marginBottom: 20 }}>
+            <p
+              style={{ fontWeight: 700, fontSize: 14, margin: "0 0 6px 18px" }}
             >
-              Day {item.day}
-            </span>
-            <span style={{ fontWeight: 600, fontSize: 15, color: "#1a1a2e" }}>
-              {item.title}
-            </span>
+              Day {item.day}:
+            </p>
+            {noBullet.map((s, i) => (
+              <p
+                key={i}
+                style={{
+                  fontSize: 14,
+                  color: "#555",
+                  margin: "0 0 4px 18px",
+                  lineHeight: 1.8,
+                }}
+              >
+                {s}
+              </p>
+            ))}
+            {withBullet.length > 0 && (
+              <ul style={{ margin: "6px 0 0 0", paddingLeft: 36 }}>
+                {withBullet.map((s, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: 14,
+                      color: "#555",
+                      lineHeight: 1.8,
+                      marginBottom: 4,
+                    }}
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-          <p
+        );
+      })}
+
+      {/* WHAT'S INCLUDED */}
+      <SectionHeading>What's Included</SectionHeading>
+      <ul style={{ margin: 0, paddingLeft: 20 }}>
+        {tour.included.map((item, i) => {
+          const { label, rest } = splitLabel(item);
+          return (
+            <li
+              key={i}
+              style={{
+                fontSize: 14,
+                color: "#444",
+                marginBottom: 6,
+                lineHeight: 1.7,
+              }}
+            >
+              {label ? (
+                <>
+                  <strong style={{ color: "#111" }}>{label}</strong>: {rest}
+                </>
+              ) : (
+                item
+              )}
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* WHAT'S NOT INCLUDED */}
+      <SectionHeading>What's Not Included</SectionHeading>
+      <ul style={{ margin: 0, paddingLeft: 20 }}>
+        {tour.notIncluded.map((item, i) => (
+          <li
+            key={i}
             style={{
-              color: "#666",
-              lineHeight: 1.8,
               fontSize: 14,
-              margin: 0,
-              paddingLeft: 4,
+              color: "#444",
+              marginBottom: 6,
+              lineHeight: 1.7,
             }}
           >
-            {item.description}
-          </p>
-        </div>
-      ))}
+            {item}
+          </li>
+        ))}
+      </ul>
 
-      {/* What's Included / Not Included */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 32,
-          marginTop: 8,
-        }}
-      >
-        <div>
-          <SectionHeading>What's Included</SectionHeading>
-          {tour.included.map((item, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 10,
-                marginBottom: 10,
-                fontSize: 14,
-                color: "#444",
-              }}
-            >
-              <span style={{ color: "#4caf50", fontWeight: 700, marginTop: 1 }}>
-                •
-              </span>
-              {item}
-            </div>
-          ))}
-        </div>
-        <div>
-          <SectionHeading>What's Not Included</SectionHeading>
-          {tour.notIncluded.map((item, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 10,
-                marginBottom: 10,
-                fontSize: 14,
-                color: "#444",
-              }}
-            >
-              <span style={{ color: "#e74c3c", fontWeight: 700, marginTop: 1 }}>
-                •
-              </span>
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Visa Guide */}
+      {/* VISA GUIDE */}
       <SectionHeading>Visa Guide</SectionHeading>
-      <ul style={{ paddingLeft: 18, margin: 0 }}>
+      <ul style={{ margin: 0, paddingLeft: 20 }}>
         <li
           style={{
-            color: "#555",
             fontSize: 14,
-            marginBottom: 8,
+            color: "#555",
+            marginBottom: 6,
             lineHeight: 1.7,
           }}
         >
-          Apply for Pakistani Tourist Visa Here{" "}
+          Apply for Pakistan Tourist Visa Here:{" "}
           <a href="#" style={{ color: "#FFB156", textDecoration: "underline" }}>
             Visa Website
           </a>
         </li>
         <li
           style={{
-            color: "#555",
             fontSize: 14,
-            marginBottom: 8,
+            color: "#555",
+            marginBottom: 6,
             lineHeight: 1.7,
           }}
         >
@@ -182,11 +231,29 @@ export default function DetailTab({ tour }) {
             Visa Guide
           </a>
         </li>
-        <li style={{ color: "#555", fontSize: 14, lineHeight: 1.7 }}>
+        <li style={{ fontSize: 14, color: "#555", lineHeight: 1.7 }}>
           If you're having trouble with your visa application, reach out to us
           for help and guidance.
         </li>
       </ul>
+
+      {/* FAQ */}
+      <SectionHeading>FAQ</SectionHeading>
+      {tour.faqs.map((faq, i) => (
+        <div key={i} style={{ marginBottom: 24 }}>
+          <p
+            style={{
+              fontWeight: 700,
+              fontSize: 14,
+              color: "#111",
+              margin: "0 0 8px 0",
+            }}
+          >
+            {faq.q}
+          </p>
+          <FaqAnswer faq={faq} />
+        </div>
+      ))}
     </div>
   );
 }

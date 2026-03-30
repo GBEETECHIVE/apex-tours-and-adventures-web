@@ -8,21 +8,21 @@ import Image from "next/image";
 const tour = {
   id: 1,
   city: "Lahore",
-  title: "02 Days Lahore Sightseeing Tour",
+  title: "Detail",
   rating: 4,
   reviews: 3,
   minAge: 18,
   maxPeople: 30,
   price: 350,
   description:
-    "During this two-day Lahore Sightseeing Tour, you will visit all attractions and experience the city's culture and enjoy its tasty food. See the historical forts and mosques from the Mughal era, as well as some of the shrines from the British era. Explore the university, where you can shop and visit museums.Local to Pakistan.Good food.",
+    "During this two-days Lahore Sightseeing Tour, you\’ll visit historical sites, gardens, and the lively Old Lahore city. You’ll soak in the city’s culture and enjoy its tasty food. See the impressive forts and mosques from the Mughal era, as well as buildings from the British era. Explore the walled city, where you can shop in colourful markets and try delicious local food.",
   images: [
     "/assets/tours/tour1.png",
     "/assets/tours/tour2.png",
     "/assets/tours/tour3.png",
     "/assets/tours/tour4.png",
     "/assets/tours/tour5.png",
-      ],
+  ],
   itinerary: [
     {
       day: 1,
@@ -38,29 +38,49 @@ const tour = {
     },
   ],
   included: [
-    "Accommodation (3-Star Hotel - Breakfast included)",
-    "Transportation (taxi and local)",
-    "Professional Guide (English Speaking Guide)",
-    "Entry Tickets (Forts and Museums and City Sights)",
-    "Interaction (Gourmet Meals, Breakfast and Dinner)",
+    "Accommodation: 3-Star Hotel – Breakfast Included",
+    "Transportation: Car and Guide",
+    "Guide: Licensed English-Speaking Guide",
+    "Entry Tickets: Forts and Museums Entry Tickets",
+    "Invitation Letter: Tourist Visa Invitation Letter",
   ],
-  notIncluded: ["Hotel", "Tips", "Personal Expenditures"],
+
+  notIncluded: ["Food", "Tip", "Personal Equipments"],
+
   faqs: [
     {
-      q: "What attractions will I visit on Lahore Full Day Sightseeing Tour?",
-      a: "On this Lahore 2 Days Full Day Sightseeing Tour, you will experience key attractions including Lahore Fort, Badshahi Mosque, Lahore Museum, Lahore Gardens, Shalimar Gardens, Wazir Khan Mosque, Wagah Border, and the bustling streets of Old City.",
+      q: "Which attractions will I visit with Lahore Full Day Sightseeing Tour?",
+      // format: "bullets" → renders intro paragraph + bullet list
+      format: "bullets",
+      intro:
+        "With the Lahore 2 Days Full Day Sightseeing Tour, you'll explore key attractions including",
+      a: `The Lahore Fort
+Badshahi Mosque
+Lahore Museum
+Shalimar Gardens
+Lahore Museum
+Wazir Khan Mosque
+Wagah Border
+And the bustling streets of the Old City`,
     },
     {
-      q: "Do I need a Visa to Travel to Pakistan?",
-      a: "Pakistan allows citizens of some countries on arrival. You may need to check visa requirements based on your nationality. Please contact our team for assistance with your visa application.",
+      q: "Do I Need a Visa to Travel to Pakistan?",
+      // No answer shown in image — leave empty or add a short paragraph
+      a: "",
     },
     {
       q: "What to wear in Pakistan?",
-      a: "Pakistan is a conservative country, so it is recommended to dress modestly. For women, loose-fitting clothes that cover arms and legs are advisable. Men should also dress modestly. Smart, comfortable shoes are recommended.",
+      // format: default → plain paragraph
+      a: "In Pakistan, what you wear depends on when and where you're going. In hot areas, wear light, loose clothes like a shirt and trousers. For cold places, bring warm clothes like a jacket and layers. When visiting mosques, cover your head, arms, legs, and shoulders. Dress modestly and avoid shorts. If you're unsure, it's best to dress conservatively.",
     },
     {
       q: "What is the weather like in Pakistan?",
-      a: "Lahore experiences a semi-arid climate with very hot summers reaching over 40°C (104°F) and mild winters. Spring (February–April) and Autumn (October–November) are the best times to visit.",
+      // format: "numbered" → renders <ol>
+      format: "numbered",
+      a: `June–September: Monsoon season with unpredictable rains, reaching over 45°C (113°F) in June. Floods can occur.
+October–November: Post-monsoon season with decreasing temperatures and rainfall. Days are warm, nights cool.
+December–February: Winter months with pleasant daytime temperatures around 20°C (68°F) and colder nights, especially in the northern mountains where it snows.
+March–May: Hot and dry season with temperatures in the mid-30s°C (95°F) in low-lying areas, getting hotter towards the north.`,
     },
   ],
   relatedTours: [
@@ -160,32 +180,32 @@ export default function TourDetail() {
           zIndex: 10,
         }}
       >
-           <Container>
-            {TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                style={{
-                  padding: "20px 28px",
-                  border: "none",
-                  background: "none",
-                  cursor: "pointer",
-                  fontSize: 14,
-                  fontWeight: 600,
-                  letterSpacing: 0.5,
-                  color: activeTab === tab ? "#444444" : "#666",
-                  borderBottom:
-                    activeTab === tab
-                      ? "3px solid #FFB156"
-                      : "3px solid transparent",
-                  transition: "all 0.2s",
-                }}
-              >
-                {tab}
-              </button>
-            ))}
-          </Container>
-       </div>
+        <Container>
+          {TABS.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              style={{
+                padding: "20px 28px",
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: 0.5,
+                color: activeTab === tab ? "#444444" : "#666",
+                borderBottom:
+                  activeTab === tab
+                    ? "3px solid #FFB156"
+                    : "3px solid transparent",
+                transition: "all 0.2s",
+              }}
+            >
+              {tab}
+            </button>
+          ))}
+        </Container>
+      </div>
       <Details activeTab={activeTab} tour={tour} />
     </section>
   );

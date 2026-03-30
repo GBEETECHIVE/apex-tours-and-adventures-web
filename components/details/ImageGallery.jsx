@@ -51,15 +51,14 @@ export default function ImageGallery({ images, title }) {
                 background: "rgba(255,255,255,0.92)",
                 color: "#1a1a2e",
                 border: "none",
-                borderRadius: 8,
+                borderRadius: 4,
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: "pointer",
                 backdropFilter: "blur(4px)",
               }}
             >
-              {/* /assets/icons/camera.png */}
-              <Image
+               <Image
                 src={"/assets/icons/gallary.png"}
                 alt={title}
                 width={30}
@@ -78,7 +77,7 @@ export default function ImageGallery({ images, title }) {
                 background: "rgba(255,255,255,0.92)",
                 color: "#1a1a2e",
                 border: "none",
-                borderRadius: 8,
+                borderRadius: 4,
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: "pointer",

@@ -131,7 +131,7 @@ export default function Details({ activeTab, tour }) {
         {/* LEFT — Main Content */}
         <div>
           <TabContent activeTab={activeTab} tour={tour} />
-        </div>
+         </div>
 
         {/* RIGHT — Booking Sidebar (sticky) */}
         <div style={{ position: "sticky", top: 80 }}>
