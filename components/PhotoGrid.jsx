@@ -1,12 +1,18 @@
+"use client";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
 const PhotoGrid = ({ images }) => {
-  // Chunk images into rows of 3
+  const router = useRouter();
+  const pathName = usePathname();
   const rows = [];
   for (let i = 0; i < images.length; i += 3) {
     rows.push(images.slice(i, i + 3));
   }
 
+  const detailsFunc = (id) => {
+    router.push(`${pathName}/${id}`);
+  };
   return (
     <div className="flex flex-col gap-10">
       {rows.map((row, rowIndex) => (
@@ -17,7 +23,7 @@ const PhotoGrid = ({ images }) => {
           {row.map((image, colIndex) => (
             <div
               key={colIndex}
-              className="relative overflow-hidden rounded-xl aspect-[4/3] mb-[100px]"  
+              className="relative overflow-hidden rounded-xl aspect-[4/3] mb-[100px]"
             >
               <Image
                 src={image.src}
@@ -25,6 +31,7 @@ const PhotoGrid = ({ images }) => {
                 className="object-cover hover:scale-105 transition-transform duration-500"
                 fill
                 loading="lazy"
+                onClick={() => detailsFunc(image.id)}
               />
             </div>
           ))}
