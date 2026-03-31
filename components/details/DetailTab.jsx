@@ -1,5 +1,12 @@
 "use client";
+import PhotoGrid from "@/components/PhotoGrid";
+import Container from "@/components/Container";
 
+const tourImages = [
+  { id: 1, src: "/assets/tours/tour1.png", alt: "Lahore historical site" },
+  { id: 2, src: "/assets/tours/tour2.png", alt: "Islamabad Faisal Mosque" },
+  { id: 3, src: "/assets/tours/tour3.png", alt: "Gilgit mountain road" },
+  ];
 const SectionHeading = ({ children }) => (
   <h2
     style={{
@@ -254,6 +261,10 @@ export default function DetailTab({ tour }) {
           <FaqAnswer faq={faq} />
         </div>
       ))}
+      <h1 className="text-lg font-bold text-black">Related tours</h1>
+       <Container className={"my-10"}>
+        <PhotoGrid images={tourImages} />
+      </Container>
     </div>
   );
 }

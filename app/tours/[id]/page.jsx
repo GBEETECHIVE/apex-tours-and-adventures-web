@@ -2,6 +2,7 @@
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection.jsx";
 import Container from "@/components/Container.jsx";
+import Footer from "@/components/Footer.jsx";
 import Details from "@/components/details/Detail.jsx";
 import Image from "next/image";
 
@@ -81,6 +82,10 @@ And the bustling streets of the Old City`,
 October–November: Post-monsoon season with decreasing temperatures and rainfall. Days are warm, nights cool.
 December–February: Winter months with pleasant daytime temperatures around 20°C (68°F) and colder nights, especially in the northern mountains where it snows.
 March–May: Hot and dry season with temperatures in the mid-30s°C (95°F) in low-lying areas, getting hotter towards the north.`,
+    },
+    {
+      q: "Is it considered safe to travel to Pakistan?",
+      a: "Although Pakistan has faced challenges in recent years, it\’s now generally safe to visit as long as you stay in busy areas. Some people might worry about coming here, but trust us, there\’s a lot to discover beyond what you see in the news. You can be confident that Rock Valley Tours wouldn\’t take you anywhere unsafe.",
     },
   ],
   relatedTours: [
@@ -207,6 +212,7 @@ export default function TourDetail() {
         </Container>
       </div>
       <Details activeTab={activeTab} tour={tour} />
+      <Footer />
     </section>
   );
 }
