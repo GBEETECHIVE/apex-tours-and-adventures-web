@@ -1,9 +1,18 @@
-import React from 'react'
+import Hero from "@/components/Hero";
 
-const page = () => {
+export default function Home() {
   return (
-    <div>page</div>
-  )
+    <main>
+      <Hero
+        title={
+          <>
+            EXPLORE <br /> PAKISTAN
+          </>
+        }
+        description="Explore Pakistan’s breathtaking beauty..."
+        buttonText="View all Tours"
+        backgroundImage="/images/hero.png"
+      />
+    </main>
+  );
 }
-
-export default page

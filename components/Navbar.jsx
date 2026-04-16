@@ -1,51 +1,33 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-const navLinks = [
-  { label: "HOME", path: "/" },
-  { label: "TOURS", path: "/tours" },
-  { label: "TREKKING", path: "/trekking" },
-  { label: "EXPEDITIONS", path: "/expeditions" },
-  { label: "CONTACT US", path: "/contact" },
-];
-
 const Navbar = () => {
-  const pathname = usePathname();
-
   return (
-    <nav className="bg-transparent text-white shadow-sm  ">
-      <div className="max-w-[937px] w-full  flex items-center  justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+    <nav className="w-full text-white relative">
+      <div className="max-w-7xl mx-auto flex items-center px-6 md:px-16 py-4">
+        
+        {/* Logo (Left) */}
+        <div className="flex items-center gap-2">
           <Image
-            src="/assets/logo white.png"
-            alt="APEX Tours & Adventures"
-            width={100}
-            height={100}
-            className="h-24 w-auto"
+            src="/images/logo.png"
+            alt="logo"
+            width={140}
+            height={140}
+            className="object-contain"
           />
-        </Link>
+        </div>
 
-        {/* Nav Links */}
-        <ul className="hidden md:flex items-center gap-8 max-w-[530px] w-full">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                href={link.path}
-                className={`text-sm font-semibold tracking-wide transition-colors text-white hover:text-orange-500 ${
-                  pathname === link.path
-                    ? "text-orange-500 border-b-2 border-orange-500 pb-0.5"
-                    : "text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Center Nav Links */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center gap-8 text-base font-medium tracking-wide">
+          <Link href="/">HOME</Link>
+          <Link href="/about">ABOUT US</Link>
+
+          <Link href="/tours">TOURS</Link>
+          <Link href="/trekking">TREKKING</Link>
+          <Link href="/expeditions">EXPEDITIONS</Link>
+          <Link href="/contact">CONTACT US</Link>
+        </div>
+
       </div>
     </nav>
   );
