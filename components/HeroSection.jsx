@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import TopBar from "@/components/TopBar";
+import PreNavbar from "@/components/PreNavbar";
 import Container from "@/components/Container";
 import Image from "next/image";
 
@@ -21,13 +21,12 @@ const HeroSection = ({
         className="object-cover"
       />
 
-      <div className=" absolute left-0 w-full  ">
-        <Container>
-          <TopBar />
-          <Navbar />
-        </Container>
+       <div className="relative z-10 flex flex-col h-full">
+      
+              <PreNavbar />
+              <Navbar />
       </div>
-      <div className="absolute left-0 w-full top-[30%] ">
+      <div className="absolute left-0 w-full top-[40%] ">
         <Container>
           <h1
             className={`text-[96px] font-bold md:text-6xl   text-white leading-[92px] font-poppins  ${details ? "mb-[0px]" : "mb-[20px]"}`}

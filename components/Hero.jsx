@@ -35,7 +35,7 @@ const Hero = ({
           <div className="max-w-7xl mx-auto w-full px-6 md:px-16 text-left">
 
             {/* Title */}
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-tight mb-6">              {title}
+<h1 className="text-6xl md:text-7xl  font-black leading-tight mb-6">              {title}
             </h1>
 
             {/* Description */}
