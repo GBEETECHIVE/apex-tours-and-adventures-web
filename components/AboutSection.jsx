@@ -4,7 +4,6 @@ export default function AboutSection() {
   return (
     <section className="bg-[white] py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
         {/* Left Image */}
         <div className="rounded-xl overflow-hidden shadow-md">
           <Image
@@ -18,7 +17,6 @@ export default function AboutSection() {
 
         {/* Right Content */}
         <div className="pt-6 md:pt-8">
-          
           {/* Flag */}
           <Image
             src="/images/flag.png"
@@ -38,13 +36,16 @@ export default function AboutSection() {
 
           {/* Text */}
           <p className="text-[#738797] leading-loose text-[17px] font-normal max-w-2xl">
-            At Apex Tours and Adventure, we invite you to embark on a thrilling
-            journey through the heart of Pakistan. From the rugged terrains of
-            Hunza and Skardu to the enchanting meadows of Fairy Meadows, the
-            tranquil beauty of Kalam and Shogran, to the historical treasures
-            of Punjab, Sindh, and Balochistan, we promise you an adventure of a
-            lifetime. Join us and explore the uncharted, witness the
-            extraordinary, and make memories that last a lifetime.
+            Apex Tours and Adventures provides expertly curated travel
+            experiences in the breathtaking region of Gilgit-Baltistan. Whether
+            you are an adventure seeker, a culture enthusiast, or someone
+            reconnecting with their roots, our tours are designed to create
+            truly unforgettable memories. We specialize in serving travelers
+            from the USA, US, Canada, and Europe, offering personalized packages
+            that allow you to explore the majestic landscapes of northern
+            Pakistan. Experience stunning valleys, towering mountains, and
+            vibrant local culture while enjoying seamless, tailored journeys
+            crafted just for you.
           </p>
 
           {/* Button (close to text, right aligned) */}
@@ -53,7 +54,6 @@ export default function AboutSection() {
               Learn More →
             </button>
           </div>
-
         </div>
       </div>
     </section>

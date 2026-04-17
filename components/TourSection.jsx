@@ -90,22 +90,25 @@ export default function TourSection() {
               </div>
 
               <p className="text-[#738797] text-[17px] font-normal leading-relaxed mb-7 max-w-[560px]">
-                At Apex Tours and Adventure, we invite you to embark on a
-                thrilling journey through the heart of Pakistan. From the rugged
-                terrains of Hunza and Skardu to the enchanting meadows of Fairy
-                Meadows, the tranquil beauty of Kalam and Shogran, to the
-                historical treasures of Punjab, Sindh, and Balochistan, we
-                promise you an adventure of a lifetime. Join us and explore the
-                uncharted, witness the extraordinary, and make memories that last
-                a lifetime.
+                At Apex Tours and Adventures, we invite you to experience the
+                beauty and adventure of Pakistan like never before. From the
+                majestic mountains of Hunza Valley and Skardu to the
+                breathtaking landscapes of Fairy Meadows, and the scenic valleys
+                of Kalam Valley and Shogran, we bring you closer to the most
+                stunning destinations in the country. From the cultural richness
+                of Punjab and Sindh to the untouched landscapes of Balochistan,
+                we promise an unforgettable journey filled with adventure,
+                discovery, and lasting memories.
               </p>
 
               <p className="text-[#738797] text-[17px] font-normal leading-relaxed  max-w-[560px]">
-                We specialize in customized tours, treks, jeep safaris, trophy
-                hunting, expeditions, and adventure programs for families,
-                groups, and corporate travelers. With years of experience and a
-                passion for exploring Pakistan, we ensure a smooth,
-                well-organized, and unforgettable journey every time.
+                We specialize in customized tours, trekking expeditions, jeep
+                safaris, trophy hunting trips, and adventure travel across
+                Pakistan. Our services are designed for families, groups, and
+                corporate travelers seeking unique and well-organized travel
+                experiences. With years of expertise and a deep passion for
+                exploring Pakistan, our team ensures every trip is smooth, safe,
+                and memorable from start to finish.
               </p>
             </div>
           </div>

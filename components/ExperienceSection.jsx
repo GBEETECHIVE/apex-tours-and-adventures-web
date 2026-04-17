@@ -6,23 +6,23 @@ export default function ExperienceSection() {
   const items = [
     {
       icon: "/images/climbing.png",
-      title: "20 YEARS EXPERIENCES",
-      text: "For two decades, we’ve been crafting unforgettable journeys, immersing travelers in the rich tapestry of cultures, landscapes, and experiences that make our world so captivating.",
+      title: "5 Years of Travel Expertise",
+      text: "For the past five years, Apex Tours and Adventures has been creating unforgettable journeys across Pakistan. Our experience ensures every trip is seamless, immersive, and full of authentic local experiences.",
     },
     {
       icon: "/images/knife.png",
-      title: "200+ TOURS ORGANIZED",
-      text: "With over 200 tours under our belt, we have the experience and expertise to make your next tour a success.",
+      title: "50+ Tours Successfully Delivered",
+      text: "With more than 50 tours organized, we have the expertise and operational excellence to craft memorable adventures — from cultural explorations to off-the-beaten-path mountain safaris.",
     },
     {
       icon: "/images/map.png",
-      title: "BIG GUIDE COMMUNITY",
-      text: "A thriving community of tour guides connects travelers with local experts, fostering meaningful experiences and cultural immersion.",
+      title: "Extensive Local Guide Network",
+      text: "Our thriving guide community connects travelers with local experts who provide authentic experiences, insider knowledge, and cultural immersion.",
     },
     {
       icon: "/images/backpack.png",
-      title: "TOURIST VISA GUIDE",
-      text: "All foreign visitors need a passport valid for at least 6 months. Tourist visas (usually valid for 3 months) can be obtained online or from Pakistani embassies/consulates. Need help with your visa? We’re here to guide you.",
+      title: "Tourist Visa Support & Travel Assistance",
+      text: "We guide international travelers through the visa process, ensuring your travel documents are handled smoothly. From online e-visas to consulate assistance, we make your journey hassle-free.",
     },
   ];
 
