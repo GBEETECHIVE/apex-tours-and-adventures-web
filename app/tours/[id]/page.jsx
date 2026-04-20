@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import HeroSection from "@/components/HeroSection.jsx";
 import Container from "@/components/Container.jsx";
 import Footer from "@/components/Footer.jsx";
@@ -16,7 +16,7 @@ const tour = {
   maxPeople: 30,
   price: 350,
   description:
-    "During this two-days Lahore Sightseeing Tour, you\’ll visit historical sites, gardens, and the lively Old Lahore city. You’ll soak in the city’s culture and enjoy its tasty food. See the impressive forts and mosques from the Mughal era, as well as buildings from the British era. Explore the walled city, where you can shop in colourful markets and try delicious local food.",
+    "During this two-days Lahore Sightseeing Tour, you'll visit historical sites, gardens, and the lively Old Lahore city. You'll soak in the city's culture and enjoy its tasty food. See the impressive forts and mosques from the Mughal era, as well as buildings from the British era. Explore the walled city, where you can shop in colourful markets and try delicious local food.",
   images: [
     "/assets/tours/tour1.png",
     "/assets/tours/tour2.png",
@@ -51,7 +51,6 @@ const tour = {
   faqs: [
     {
       q: "Which attractions will I visit with Lahore Full Day Sightseeing Tour?",
-      // format: "bullets" → renders intro paragraph + bullet list
       format: "bullets",
       intro:
         "With the Lahore 2 Days Full Day Sightseeing Tour, you'll explore key attractions including",
@@ -66,17 +65,14 @@ And the bustling streets of the Old City`,
     },
     {
       q: "Do I Need a Visa to Travel to Pakistan?",
-      // No answer shown in image — leave empty or add a short paragraph
       a: "",
     },
     {
       q: "What to wear in Pakistan?",
-      // format: default → plain paragraph
       a: "In Pakistan, what you wear depends on when and where you're going. In hot areas, wear light, loose clothes like a shirt and trousers. For cold places, bring warm clothes like a jacket and layers. When visiting mosques, cover your head, arms, legs, and shoulders. Dress modestly and avoid shorts. If you're unsure, it's best to dress conservatively.",
     },
     {
       q: "What is the weather like in Pakistan?",
-      // format: "numbered" → renders <ol>
       format: "numbered",
       a: `June–September: Monsoon season with unpredictable rains, reaching over 45°C (113°F) in June. Floods can occur.
 October–November: Post-monsoon season with decreasing temperatures and rainfall. Days are warm, nights cool.
@@ -85,7 +81,7 @@ March–May: Hot and dry season with temperatures in the mid-30s°C (95°F) in l
     },
     {
       q: "Is it considered safe to travel to Pakistan?",
-      a: "Although Pakistan has faced challenges in recent years, it\’s now generally safe to visit as long as you stay in busy areas. Some people might worry about coming here, but trust us, there\’s a lot to discover beyond what you see in the news. You can be confident that Rock Valley Tours wouldn\’t take you anywhere unsafe.",
+      a: "Although Pakistan has faced challenges in recent years, it's now generally safe to visit as long as you stay in busy areas. Some people might worry about coming here, but trust us, there's a lot to discover beyond what you see in the news. You can be confident that Rock Valley Tours wouldn't take you anywhere unsafe.",
     },
   ],
   relatedTours: [
@@ -110,14 +106,38 @@ March–May: Hot and dry season with temperatures in the mid-30s°C (95°F) in l
   ],
 };
 
-const TABS = ["Detail", "Itinerary", "Reviews", "FAQ", "Tour Guide"];
+const NAV_ITEMS = ["Detail", "Itinerary", "FAQ", "Reviews", "Tour Guide"];
 
 export default function TourDetail() {
-  const [activeTab, setActiveTab] = useState("Detail");
   const [date, setDate] = useState("");
   const [people, setPeople] = useState(1);
-  const [openFaq, setOpenFaq] = useState(null);
   const [bookingDone, setBookingDone] = useState(false);
+  const [activeSection, setActiveSection] = useState("Detail");
+
+  const detailRef = useRef(null);
+  const itineraryRef = useRef(null);
+  const reviewsRef = useRef(null);
+  const faqRef = useRef(null);
+  const tourGuideRef = useRef(null);
+
+  const sectionRefs = {
+    Detail: detailRef,
+    Itinerary: itineraryRef,
+    Reviews: reviewsRef,
+    FAQ: faqRef,
+    "Tour Guide": tourGuideRef,
+  };
+
+  const handleNavClick = (section) => {
+    const ref = sectionRefs[section];
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    setActiveSection(section);
+  };
 
   const handleBooking = () => {
     if (!date) return alert("Please select a date!");
@@ -133,9 +153,9 @@ export default function TourDetail() {
         backgroundImage="/assets/Background.png"
         details={true}
       />
-      <div className="  bg-[#F5F5F5] mt-12 py-16">
+      <div className="bg-[#F5F5F5] mt-12 py-16">
         <Container>
-          <div className="grid grid-cols-2 gap-y-12 ">
+          <div className="grid grid-cols-2 gap-y-12">
             <div className="flex items-end gap-4">
               <Image
                 src={"/assets/icons/aeroplan.png"}
@@ -144,7 +164,6 @@ export default function TourDetail() {
                 height={100}
                 className="max-w-[24px] w-full"
               />
-
               <span className="text-[#414141] text-sm font-medium">Lahore</span>
             </div>
 
@@ -168,7 +187,7 @@ export default function TourDetail() {
                 width={100}
                 height={100}
                 className="max-w-[20px] w-full"
-              />{" "}
+              />
               <span className="text-[#414141] text-sm font-medium">
                 Max People : 20
               </span>
@@ -176,42 +195,60 @@ export default function TourDetail() {
           </div>
         </Container>
       </div>
+
       <div
         style={{
           background: "#fff",
           borderBottom: "1px solid #e0e0e0",
           position: "sticky",
           top: 0,
-          zIndex: 10,
+          zIndex: 20,
         }}
       >
         <Container>
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              style={{
-                padding: "20px 28px",
-                border: "none",
-                background: "none",
-                cursor: "pointer",
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: 0.5,
-                color: activeTab === tab ? "#444444" : "#666",
-                borderBottom:
-                  activeTab === tab
-                    ? "3px solid #FFB156"
-                    : "3px solid transparent",
-                transition: "all 0.2s",
-              }}
-            >
-              {tab}
-            </button>
-          ))}
+          <div className="flex overflow-x-auto">
+            {NAV_ITEMS.map((item) => {
+              const isActive = item === activeSection;
+              return (
+                <button
+                  key={item}
+                  onClick={() => handleNavClick(item)}
+                  style={{
+                    padding: "20px 28px",
+                    border: "none",
+                    background: "none",
+                    cursor: "pointer",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    letterSpacing: 0.5,
+                    color: isActive ? "#FFB156" : "#666",
+                    borderBottom: "3px solid transparent",
+                    borderBottomColor: isActive ? "#FFB156" : "transparent",
+                    transition: "all 0.2s",
+                    whiteSpace: "nowrap",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "#FFB156";
+                      e.currentTarget.style.borderBottomColor = "#FFB156";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "#666";
+                      e.currentTarget.style.borderBottomColor = "transparent";
+                    }
+                  }}
+                >
+                  {item}
+                </button>
+              );
+            })}
+          </div>
         </Container>
       </div>
-      <Details activeTab={activeTab} tour={tour} />
+
+      <Details tour={tour} sectionRefs={sectionRefs} />
       <Footer />
     </section>
   );

@@ -10,7 +10,6 @@ const Hero = ({
 }) => {
   return (
     <section className="relative w-full h-screen text-white">
-
       {/* Background Image */}
       <Image
         src={backgroundImage}
@@ -25,17 +24,17 @@ const Hero = ({
 
       {/* Content Wrapper */}
       <div className="relative z-10 flex flex-col h-full">
-
         {/* Top Navs */}
         <PreNavbar />
         <Navbar />
 
         {/* Hero Content */}
         <div className="flex-1 flex items-center">
-          <div className="max-w-7xl mx-auto w-full px-6 md:px-16 text-left">
-
+          <div className="max-w-7xl mx-auto w-full  px-4 sm:px-6 lg:px-8 text-left">
             {/* Title */}
-<h1 className="text-6xl md:text-7xl  font-black leading-tight mb-6">              {title}
+            <h1 className="text-6xl md:text-7xl  font-black leading-tight mb-6">
+              {" "}
+              {title}
             </h1>
 
             {/* Description */}
@@ -44,15 +43,13 @@ const Hero = ({
             </p>
 
             {/* Button */}
-          {buttonText && (
-  <button className="bg-gradient-to-r from-orange-400 to-orange-600 px-14 py-3 rounded-md font-medium shadow-lg hover:opacity-90 transition">
-    {buttonText}
-  </button>
-)}
-
+            {buttonText && (
+              <button className="bg-gradient-to-r from-orange-400 to-orange-600 px-14 py-3 rounded-md font-medium shadow-lg hover:opacity-90 transition">
+                {buttonText}
+              </button>
+            )}
           </div>
         </div>
-
       </div>
     </section>
   );

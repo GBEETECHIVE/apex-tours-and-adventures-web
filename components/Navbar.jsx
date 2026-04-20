@@ -4,8 +4,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className="w-full text-white relative">
-      <div className="max-w-7xl mx-auto flex items-center px-6 md:px-16 py-4">
-        
+      <div className="max-w-7xl mx-auto flex items-center  px-4 sm:px-6 lg:px-8 py-4">
         {/* Logo (Left) */}
         <div className="flex items-center gap-2">
           <Image
@@ -27,7 +26,6 @@ const Navbar = () => {
           <Link href="/expeditions">EXPEDITIONS</Link>
           <Link href="/contact">CONTACT US</Link>
         </div>
-
       </div>
     </nav>
   );

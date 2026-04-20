@@ -39,7 +39,7 @@ export default function ImageGallery({ images, title }) {
               left: 38,
               display: "flex",
               gap: 8,
-              zIndex: 10,
+              zIndex: 5,
             }}
           >
             <button
@@ -58,7 +58,7 @@ export default function ImageGallery({ images, title }) {
                 backdropFilter: "blur(4px)",
               }}
             >
-               <Image
+              <Image
                 src={"/assets/icons/gallary.png"}
                 alt={title}
                 width={30}

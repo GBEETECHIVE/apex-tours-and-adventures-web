@@ -6,7 +6,8 @@ const tourImages = [
   { id: 1, src: "/assets/tours/tour1.png", alt: "Lahore historical site" },
   { id: 2, src: "/assets/tours/tour2.png", alt: "Islamabad Faisal Mosque" },
   { id: 3, src: "/assets/tours/tour3.png", alt: "Gilgit mountain road" },
-  ];
+];
+
 const SectionHeading = ({ children }) => (
   <h2
     style={{
@@ -101,68 +102,51 @@ function FaqAnswer({ faq }) {
   );
 }
 
-export default function DetailTab({ tour }) {
+export default function DetailTab({ tour, sectionRefs }) {
   return (
     <div style={{ fontFamily: "inherit", color: "#333", lineHeight: 1.8 }}>
-      {/* DETAIL */}
-      <SectionHeading>Detail</SectionHeading>
-      <p style={{ fontSize: 14, color: "#444", margin: "0 0 8px 0" }}>
-        Two Days {tour.city} Sightseeing Tour
-      </p>
-      <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
-        {tour.description}
-      </p>
+       <div ref={sectionRefs.Detail}>
+        <SectionHeading>Detail</SectionHeading>
+        <p style={{ fontSize: 14, color: "#444", margin: "0 0 8px 0" }}>
+          Two Days {tour.city} Sightseeing Tour
+        </p>
+        <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
+          {tour.description}
+        </p>
+      </div>
 
-      {/* ITINERARY */}
-      <SectionHeading>Itinerary</SectionHeading>
-      {tour.itinerary.map((item) => {
-        const sentences = item.description
-          .split(/(?<=\.)\s+/)
-          .map((s) => s.trim())
-          .filter(Boolean);
-        const noBullet = sentences.slice(0, 2);
-        const withBullet = sentences.slice(2);
+      {/* ITINERARY SECTION - This is where "Itinerary" button scrolls to */}
+      <div ref={sectionRefs.Itinerary}>
+        <SectionHeading>Itinerary</SectionHeading>
+        {tour.itinerary.map((item) => {
+          // Split description into sentences for better formatting
+          const sentences = item.description
+            .split(/(?<=\.)\s+/)
+            .map((s) => s.trim())
+            .filter(Boolean);
 
-        return (
-          <div key={item.day} style={{ marginBottom: 20 }}>
-            <p
-              style={{ fontWeight: 700, fontSize: 14, margin: "0 0 6px 18px" }}
-            >
-              Day {item.day}:
-            </p>
-            {noBullet.map((s, i) => (
-              <p
-                key={i}
-                style={{
-                  fontSize: 14,
-                  color: "#555",
-                  margin: "0 0 4px 18px",
-                  lineHeight: 1.8,
-                }}
-              >
-                {s}
+          return (
+            <div key={item.day} style={{ marginBottom: 20 }}>
+              <p style={{ fontWeight: 700, fontSize: 14, margin: "0 0 6px 0" }}>
+                Day {item.day}:
               </p>
-            ))}
-            {withBullet.length > 0 && (
-              <ul style={{ margin: "6px 0 0 0", paddingLeft: 36 }}>
-                {withBullet.map((s, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      fontSize: 14,
-                      color: "#555",
-                      lineHeight: 1.8,
-                      marginBottom: 4,
-                    }}
-                  >
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        );
-      })}
+              {sentences.map((s, i) => (
+                <p
+                  key={i}
+                  style={{
+                    fontSize: 14,
+                    color: "#555",
+                    margin: "0 0 4px 0",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {s}
+                </p>
+              ))}
+            </div>
+          );
+        })}
+      </div>
 
       {/* WHAT'S INCLUDED */}
       <SectionHeading>What's Included</SectionHeading>
@@ -191,8 +175,7 @@ export default function DetailTab({ tour }) {
         })}
       </ul>
 
-      {/* WHAT'S NOT INCLUDED */}
-      <SectionHeading>What's Not Included</SectionHeading>
+       <SectionHeading>What's Not Included</SectionHeading>
       <ul style={{ margin: 0, paddingLeft: 20 }}>
         {tour.notIncluded.map((item, i) => (
           <li
@@ -244,25 +227,47 @@ export default function DetailTab({ tour }) {
         </li>
       </ul>
 
-      {/* FAQ */}
-      <SectionHeading>FAQ</SectionHeading>
-      {tour.faqs.map((faq, i) => (
-        <div key={i} style={{ marginBottom: 24 }}>
-          <p
-            style={{
-              fontWeight: 700,
-              fontSize: 14,
-              color: "#111",
-              margin: "0 0 8px 0",
-            }}
-          >
-            {faq.q}
-          </p>
-          <FaqAnswer faq={faq} />
-        </div>
-      ))}
-      <h1 className="text-lg font-bold text-black">Related tours</h1>
-       <Container className={"my-10"}>
+      {/* FAQ SECTION - This is where "FAQ" button scrolls to */}
+      <div ref={sectionRefs.FAQ}>
+        <SectionHeading>FAQ</SectionHeading>
+        {tour.faqs.map((faq, i) => (
+          <div key={i} style={{ marginBottom: 24 }}>
+            <p
+              style={{
+                fontWeight: 700,
+                fontSize: 14,
+                color: "#111",
+                margin: "0 0 8px 0",
+              }}
+            >
+              {faq.q}
+            </p>
+            <FaqAnswer faq={faq} />
+          </div>
+        ))}
+      </div>
+
+      {/* TOUR GUIDE SECTION */}
+      <div ref={sectionRefs["Tour Guide"]}>
+        <SectionHeading>Tour Guide</SectionHeading>
+        <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85 }}>
+          Our professional English-speaking guides are available to make your
+          experience memorable. All our guides are licensed, experienced, and
+          passionate about sharing the rich history and culture of Lahore.
+        </p>
+      </div>
+
+      {/* REVIEWS SECTION */}
+      <div ref={sectionRefs.Reviews}>
+        <SectionHeading>Reviews</SectionHeading>
+        <p style={{ fontSize: 14, color: "#888" }}>
+          No reviews yet. Be the first to review this tour!
+        </p>
+      </div>
+
+      {/* RELATED TOURS */}
+      <h1 className="text-lg font-bold text-black mt-8">Related tours</h1>
+      <Container className={"my-10"}>
         <PhotoGrid images={tourImages} />
       </Container>
     </div>
