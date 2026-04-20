@@ -1,3 +1,4 @@
+
 "use client";
 import BookingWidget from "./BookingWidget";
 import DetailTab from "./DetailTab";
@@ -5,51 +6,33 @@ import ImageGallery from "./ImageGallery";
 import Image from "next/image";
 import Container from "@/components/Container.jsx";
 
-export default function Details({ tour, sectionRefs }) {
+export default function Details({
+  tour,
+  sectionRefs,
+  handleBooking,
+  date,
+  setDate,
+  bookingDone,
+}) {
   return (
     <Container>
       <div className="my-[20px] px-4">
         <h1 className="text-[29px] font-bold md:text-[35px] leading-[92px] font-poppins">
-          02 Days Lahore Sightseeing Tour
+          {tour.fullTitle}
         </h1>
         <div className="flex items-end w-full gap-1">
-          <Image
-            src="/assets/icons/star.png"
-            alt="Start icon"
-            width={30}
-            height={30}
-            className="max-w-[20px] w-full h-auto"
-          />
-          <Image
-            src="/assets/icons/star.png"
-            alt="Start icon"
-            width={30}
-            height={30}
-            className="max-w-[20px] w-full h-auto"
-          />
-          <Image
-            src="/assets/icons/star.png"
-            alt="Start icon"
-            width={30}
-            height={30}
-            className="max-w-[20px] w-full h-auto"
-          />
-          <Image
-            src="/assets/icons/star.png"
-            alt="Start icon"
-            width={30}
-            height={30}
-            className="max-w-[20px] w-full h-auto"
-          />
-          <Image
-            src="/assets/icons/star.png"
-            alt="Start icon"
-            width={30}
-            height={30}
-            className="max-w-[20px] w-full h-auto"
-          />
+          {[...Array(5)].map((_, i) => (
+            <Image
+              key={i}
+              src="/assets/icons/star.png"
+              alt="Star icon"
+              width={30}
+              height={30}
+              className="max-w-[20px] w-full h-auto"
+            />
+          ))}
           <p className="ml-1 text-[15px] text-gray-600 font-[400] leading-[18px]">
-            (3 Reviews)
+            ({tour.reviews} Reviews)
           </p>
         </div>
       </div>
@@ -65,12 +48,18 @@ export default function Details({ tour, sectionRefs }) {
           alignItems: "start",
         }}
       >
-         <div>
+        <div>
           <DetailTab tour={tour} sectionRefs={sectionRefs} />
         </div>
 
-         <div style={{ position: "sticky", top: 80 }}>
-          <BookingWidget price={tour.price} />
+        <div style={{ position: "sticky", top: 80 }}>
+          <BookingWidget
+            price={tour.price}
+            handleBooking={handleBooking}
+            date={date}
+            setDate={setDate}
+            bookingDone={bookingDone}
+          />
         </div>
       </div>
     </Container>

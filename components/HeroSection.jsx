@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const HeroSection = ({
   title,
+  fullTitle = "",
   description,
   backgroundImage,
   details = false,
@@ -21,10 +22,9 @@ const HeroSection = ({
         className="object-cover"
       />
 
-       <div className="relative z-10 flex flex-col h-full">
-      
-              <PreNavbar />
-              <Navbar />
+      <div className="relative z-10 flex flex-col h-full">
+        <PreNavbar />
+        <Navbar />
       </div>
       <div className="absolute left-0 w-full top-[40%] ">
         <Container>
@@ -36,7 +36,7 @@ const HeroSection = ({
           {details && (
             <div className="mb-[20px]">
               <h1 className="text-[29px] font-bold md:text-[35px]   text-white leading-[92px] font-poppins ">
-                02 Days Lahore Sightseeing Tour
+                {fullTitle}
               </h1>
               <div className="flex items-end  w-full  gap-1 text-white">
                 <Image

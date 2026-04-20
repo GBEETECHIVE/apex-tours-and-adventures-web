@@ -2,12 +2,6 @@
 import PhotoGrid from "@/components/PhotoGrid";
 import Container from "@/components/Container";
 
-const tourImages = [
-  { id: 1, src: "/assets/tours/tour1.png", alt: "Lahore historical site" },
-  { id: 2, src: "/assets/tours/tour2.png", alt: "Islamabad Faisal Mosque" },
-  { id: 3, src: "/assets/tours/tour3.png", alt: "Gilgit mountain road" },
-];
-
 const SectionHeading = ({ children }) => (
   <h2
     style={{
@@ -31,7 +25,7 @@ function splitLabel(str) {
 }
 
 function FaqAnswer({ faq }) {
-  if (!faq.a) return null;
+  if (!faq?.a) return null;
 
   if (faq.format === "numbered") {
     const items = faq.a
@@ -39,7 +33,7 @@ function FaqAnswer({ faq }) {
       .map((s) => s.trim())
       .filter(Boolean);
     return (
-      <ol style={{ margin: 0, paddingLeft: 20 }}>
+      <ol style={{ margin: 0, paddingLeft: 20, listStyleType: "disc" }}>
         {items.map((item, i) => (
           <li
             key={i}
@@ -76,7 +70,7 @@ function FaqAnswer({ faq }) {
             {faq.intro}
           </p>
         )}
-        <ul style={{ margin: 0, paddingLeft: 20 }}>
+        <ul style={{ margin: 0, paddingLeft: 20, listStyleType: "disc" }}>
           {items.map((item, i) => (
             <li
               key={i}
@@ -103,23 +97,26 @@ function FaqAnswer({ faq }) {
 }
 
 export default function DetailTab({ tour, sectionRefs }) {
+  const tourImages = tour.images.map((src, index) => ({
+    id: index + 1,
+    src,
+    alt: `${tour.city} tour image ${index + 1}`,
+  }));
+
   return (
     <div style={{ fontFamily: "inherit", color: "#333", lineHeight: 1.8 }}>
-       <div ref={sectionRefs.Detail}>
+      {/* DETAIL SECTION */}
+      <div ref={sectionRefs.Detail}>
         <SectionHeading>Detail</SectionHeading>
-        <p style={{ fontSize: 14, color: "#444", margin: "0 0 8px 0" }}>
-          Two Days {tour.city} Sightseeing Tour
-        </p>
         <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
           {tour.description}
         </p>
       </div>
 
-      {/* ITINERARY SECTION - This is where "Itinerary" button scrolls to */}
+      {/* ITINERARY SECTION */}
       <div ref={sectionRefs.Itinerary}>
         <SectionHeading>Itinerary</SectionHeading>
         {tour.itinerary.map((item) => {
-          // Split description into sentences for better formatting
           const sentences = item.description
             .split(/(?<=\.)\s+/)
             .map((s) => s.trim())
@@ -128,7 +125,7 @@ export default function DetailTab({ tour, sectionRefs }) {
           return (
             <div key={item.day} style={{ marginBottom: 20 }}>
               <p style={{ fontWeight: 700, fontSize: 14, margin: "0 0 6px 0" }}>
-                Day {item.day}:
+                Day {item.day}: {item.title}
               </p>
               {sentences.map((s, i) => (
                 <p
@@ -147,10 +144,10 @@ export default function DetailTab({ tour, sectionRefs }) {
           );
         })}
       </div>
-
+,
       {/* WHAT'S INCLUDED */}
       <SectionHeading>What's Included</SectionHeading>
-      <ul style={{ margin: 0, paddingLeft: 20 }}>
+      <ol style={{ margin: 0, paddingLeft: 20,listStyleType: "disc" }}>
         {tour.included.map((item, i) => {
           const { label, rest } = splitLabel(item);
           return (
@@ -173,9 +170,10 @@ export default function DetailTab({ tour, sectionRefs }) {
             </li>
           );
         })}
-      </ul>
+      </ol>
 
-       <SectionHeading>What's Not Included</SectionHeading>
+      {/* WHAT'S NOT INCLUDED */}
+      <SectionHeading>What's Not Included</SectionHeading>
       <ul style={{ margin: 0, paddingLeft: 20 }}>
         {tour.notIncluded.map((item, i) => (
           <li
@@ -227,7 +225,7 @@ export default function DetailTab({ tour, sectionRefs }) {
         </li>
       </ul>
 
-      {/* FAQ SECTION - This is where "FAQ" button scrolls to */}
+      {/* FAQ SECTION */}
       <div ref={sectionRefs.FAQ}>
         <SectionHeading>FAQ</SectionHeading>
         {tour.faqs.map((faq, i) => (
@@ -253,7 +251,7 @@ export default function DetailTab({ tour, sectionRefs }) {
         <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85 }}>
           Our professional English-speaking guides are available to make your
           experience memorable. All our guides are licensed, experienced, and
-          passionate about sharing the rich history and culture of Lahore.
+          passionate about sharing the rich history and culture of {tour.city}.
         </p>
       </div>
 
@@ -261,15 +259,21 @@ export default function DetailTab({ tour, sectionRefs }) {
       <div ref={sectionRefs.Reviews}>
         <SectionHeading>Reviews</SectionHeading>
         <p style={{ fontSize: 14, color: "#888" }}>
-          No reviews yet. Be the first to review this tour!
+          {tour.reviews > 0
+            ? `Based on ${tour.reviews} reviews, our customers love this tour!`
+            : "No reviews yet. Be the first to review this tour!"}
         </p>
       </div>
 
       {/* RELATED TOURS */}
-      <h1 className="text-lg font-bold text-black mt-8">Related tours</h1>
-      <Container className={"my-10"}>
-        <PhotoGrid images={tourImages} />
-      </Container>
+      {tour.relatedTours.length > 0 && (
+        <>
+          <h1 className="text-lg font-bold text-black mt-8">Related tours</h1>
+          <Container className={"my-10"}>
+            <PhotoGrid images={tourImages} />
+          </Container>
+        </>
+      )}
     </div>
   );
 }
