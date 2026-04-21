@@ -81,7 +81,7 @@ const HeroSection = ({
             </div>
           )}
           <p className=" text-white  text-[base] md:text-[20px]  leading-[42px] font-normal   max-w-[977px] w-full font-roboto  ">
-            {description}
+            {/* {description} */}
           </p>
         </Container>
       </div>
