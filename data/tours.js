@@ -9,6 +9,8 @@ export const tours = [
     minAge: 12,
     maxPeople: 20,
     price: 1250,
+    shortDescription:
+      "Experience the breathtaking landscapes of Skardu, Hunza Valley, and Fairy Meadows on this 10-day journey.",
     description:
       "Embark on a 10-day journey through the breathtaking landscapes of Skardu, Hunza Valley, and Fairy Meadows. Explore majestic mountains, sparkling lakes, historic forts, and vibrant local culture. Wake up to views of Nanga Parbat, sail on turquoise waters, and experience the true magic of northern Pakistan.",
     images: [
@@ -29,7 +31,7 @@ export const tours = [
         day: 2,
         title: "Islamabad → Skardu",
         description:
-          "Breakfast at hotel. Fly to Skardu (approx. 45 minutes). Visit Shangrila Resort, Upper & Lower Kachura Lakes. Explore Katpana Desert. Dinner and overnight stay in Apex Hotels and Resorts Skardu.",
+          "Breakfast at hotel. Fly to Skardu (approx 45 minutes). Visit Shangrila Resort, Upper & Lower Kachura Lakes. Explore Katpana Desert. Dinner and overnight stay in Apex Hotels and Resorts Skardu.",
       },
       {
         day: 3,
@@ -142,8 +144,10 @@ export const tours = [
     minAge: 10,
     maxPeople: 25,
     price: 750,
+    shortDescription:
+      "Discover the stunning beauty of Hunza Valley and Attabad Lake on this 5-day tour.",
     description:
-      "Embark on an unforgettable journey through the spectacular landscapes of northern Pakistan with Apex Tours and Adventures. This tour takes you to the breathtaking valleys of Hunza Valley, where travelers experience majestic mountains, historic forts, and vibrant local culture. From the scenic drive along the Karakoram Highway to the crystal-clear waters of Attabad Lake, every moment of this journey offers stunning views and memorable experiences.",
+      "Embark on an unforgettable journey through the spectacular landscapes of northern Pakistan with Apex Tours and Adventures. This tour takes you to the breathtaking valleys of Hunza Valley, where travelers experience majestic mountains, historic forts, and vibrant local culture. From the scenic drive along the Karakoram Highway to the crystal-clear waters of Attabad Lake, every moment of this journey offers stunning views and memorable experiences. Perfect for nature lovers, photographers, and adventure seekers, this tour combines exploration, comfort, and authentic hospitality.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -219,8 +223,10 @@ export const tours = [
     minAge: 10,
     maxPeople: 25,
     price: 650,
+    shortDescription:
+      "Explore the stunning landscapes of Skardu with this 5-day tour.",
     description:
-      "Embark on a spectacular adventure to the majestic landscapes of Skardu with Apex Tours and Adventures. Surrounded by towering mountains and crystal-clear lakes, Skardu is one of the most breathtaking destinations in northern Pakistan. This tour offers a perfect combination of natural beauty, cultural exploration, and relaxing moments in scenic valleys.",
+      "Embark on a spectacular adventure to the majestic landscapes of Skardu with Apex Tours and Adventures. Surrounded by towering mountains and crystal-clear lakes, Skardu is one of the most breathtaking destinations in northern Pakistan. This tour offers a perfect combination of natural beauty, cultural exploration, and relaxing moments in scenic valleys. From the peaceful waters of Satpara Lake to the historic charm of Shigar Valley, every stop on this journey promises unforgettable experiences. Perfect for travelers seeking adventure, photography opportunities, and cultural discoveries.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -290,8 +296,10 @@ export const tours = [
     minAge: 10,
     maxPeople: 25,
     price: 850,
+    shortDescription:
+      "Experience the dramatic landscapes and cultural treasures of Hunza Valley on this extended adventure tour.",
     description:
-      "Experience the dramatic landscapes and cultural treasures of Hunza Valley on this extended adventure tour. This journey takes travelers along the legendary Karakoram Highway, passing through picturesque villages, turquoise lakes, and breathtaking mountain passes. From the iconic beauty of Attabad Lake to the world-famous Khunjerab Pass, visitors will experience nature at its most spectacular.",
+      "Experience the dramatic landscapes and cultural treasures of Hunza Valley on this extended adventure tour. This journey takes travelers along the legendary Karakoram Highway, passing through picturesque villages, turquoise lakes, and breathtaking mountain passes. From the iconic beauty of Attabad Lake to the world-famous Khunjerab Pass, visitors will experience nature at its most spectacular. Perfect for explorers and photographers looking to discover the hidden gems of northern Pakistan.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -360,8 +368,10 @@ export const tours = [
     minAge: 10,
     maxPeople: 25,
     price: 450,
+    shortDescription:
+      "Explore the rich history and vibrant culture of Lahore, the cultural capital of Pakistan, with this 5-day Lahore heritage tour.",
     description:
-      "Explore the rich history and vibrant culture of Lahore, the cultural capital of Pakistan, with this 5-day Lahore heritage tour. This journey takes you through centuries-old Mughal architecture, colonial landmarks, and lively bazaars that define the city's timeless charm. From the majestic Badshahi Mosque to the historic Lahore Fort, travelers will experience the essence of Lahore's heritage. Alongside sightseeing, enjoy traditional cuisine, bustling markets, and the warm hospitality that makes Lahore a must-visit destination in Pakistan.",
+      "Explore the rich history and vibrant culture of Lahore, the cultural capital of Pakistan, with this 5-day Lahore heritage tour. This journey takes you through centuries-old Mughal architecture, colonial landmarks, and lively bazaars that define the city’s timeless charm. From the majestic Badshahi Mosque to the historic Lahore Fort, travelers will experience the essence of Lahore’s heritage. Alongside sightseeing, enjoy traditional cuisine, bustling markets, and the warm hospitality that makes Lahore a must-visit destination in Pakistan.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -450,6 +460,8 @@ export const tours = [
     minAge: 8,
     maxPeople: 30,
     price: 400,
+    shortDescription:
+      "Discover the perfect blend of modern city life and scenic hill landscapes with this 5-day Islamabad & Murree tour.",
     description:
       "Discover the perfect blend of modern city life and scenic hill landscapes with this 5-day Islamabad & Murree tour. Explore the capital city of Islamabad, known for its cleanliness, architecture, and natural beauty, along with the lush green hills of Murree. From the iconic Faisal Mosque to the panoramic views of the Margalla Hills, and the charming streets of Murree, this tour offers a relaxing and refreshing getaway. Visitors can enjoy cool weather, scenic viewpoints, and cultural attractions, making it an ideal family and leisure trip.",
     images: [
@@ -547,8 +559,10 @@ export const tours = [
     minAge: 8,
     maxPeople: 25,
     price: 380,
+    shortDescription:
+      "Discover the vibrant energy of Karachi, the economic and cultural hub of Pakistan, on this 5-day Karachi city and beach tour.",
     description:
-      "Discover the vibrant energy of Karachi, the economic and cultural hub of Pakistan, on this 5-day Karachi city and beach tour. This journey offers a perfect mix of historic landmarks, bustling markets, modern city life, and scenic beaches along the Arabian Sea. From visiting the iconic Mazar-e-Quaid to relaxing at Clifton Beach and exploring vibrant bazaars, this tour is ideal for travelers seeking culture, food, shopping, and coastal relaxation. Karachi's diverse lifestyle, delicious street food, and lively atmosphere make it a must-visit destination in Pakistan.",
+      "Discover the vibrant energy of Karachi, the economic and cultural hub of Pakistan, on this 5-day Karachi city and beach tour. This journey offers a perfect mix of historic landmarks, bustling markets, modern city life, and scenic beaches along the Arabian Sea. From visiting the iconic Mazar-e-Quaid to relaxing at Clifton Beach and exploring vibrant bazaars, this tour is ideal for travelers seeking culture, food, shopping, and coastal relaxation. Karachi’s diverse lifestyle, delicious street food, and lively atmosphere make it a must-visit destination in Pakistan",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -645,8 +659,10 @@ export const tours = [
     minAge: 12,
     maxPeople: 20,
     price: 950,
+    shortDescription:
+      "Experience an unforgettable 7-day Deosai National Park wildlife tour from Islamabad to the breathtaking landscapes of northern Pakistan.",
     description:
-      "Experience an unforgettable 7-day Deosai National Park wildlife tour from Islamabad to the breathtaking landscapes of northern Pakistan. Travel through the lush valleys of Kaghan Valley, cross the iconic Babusar Pass, and explore the beauty of Skardu before entering the vast wilderness of Deosai National Park. This tour combines jeep safari, camping, sightseeing, and nature exploration, offering a perfect blend of adventure and relaxation. Travelers can choose to travel by road from Islamabad or take a direct flight to Skardu. Sitting at an altitude of around 4,000 meters, Deosai requires light acclimatization. The ideal travel season is mid-July to September, when snow melts and vibrant wildflowers cover the plains.",
+      "Experience an unforgettable 7-day Deosai National Park wildlife tour from Islamabad to the breathtaking landscapes of northern Pakistan. Travel through the lush valleys of Kaghan Valley, cross the iconic Babusar Pass, and explore the beauty of Skardu before entering the vast wilderness of Deosai National Park. This tour combines jeep safari, camping, sightseeing, and nature exploration, offering a perfect blend of adventure and relaxation. Travelers can choose to travel by road from Islamabad or take a direct flight to Skardu. Sitting at an altitude of around 4,000 meters, Deosai requires light acclimatization.The ideal travel season is mid- July to September, when snow melts and vibrant wildflowers cover the plains.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -761,8 +777,10 @@ export const tours = [
     minAge: 10,
     maxPeople: 20,
     price: 1100,
+    shortDescription:
+      "Embark on an unforgettable 8-day overland journey along the legendary Karakoram Highway to the breathtaking valleys of Hunza Valley and Gojal Valley, featuring comfortable hotel stays throughout the tour.",
     description:
-      "Embark on an unforgettable 8-day overland journey along the legendary Karakoram Highway to the breathtaking valleys of Hunza Valley and Gojal Valley, featuring comfortable hotel stays throughout the tour. Travel through dramatic landscapes where the Karakoram Range, Himalayas, and Hindu Kush converge. Known as the Eighth Wonder of the World, the Karakoram Highway offers some of the most spectacular mountain scenery on Earth. Spend quality time in Hunza, a region renowned for its peaceful environment, Ismaili Muslim culture, and exceptional hospitality. Enjoy scenic walks, explore glaciers flowing from towering peaks, and experience authentic village life surrounded by some of the world's highest mountains. This tour is ideal for travelers seeking soft adventure, cultural exploration, and iconic mountain landscapes in northern Pakistan.",
+      "Embark on an unforgettable 8-day overland journey along the legendary Karakoram Highway to the breathtaking valleys of Hunza Valley and Gojal Valley, featuring comfortable hotel stays throughout the tour. Travel through dramatic landscapes where the Karakoram Range, Himalayas, and Hindu Kush converge. Known as the Eighth Wonder of the World, the Karakoram Highway offers some of the most spectacular mountain scenery on Earth. Spend quality time in Hunza, a region renowned for its peaceful environment, Ismaili Muslim culture, and exceptional hospitality. Enjoy scenic walks, explore glaciers flowing from towering peaks, and experience authentic village life surrounded by some of the world’s highest mountains. This tour is ideal for travelers seeking soft adventure, cultural exploration, and iconic mountain landscapes in northern Pakistan.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -888,8 +906,10 @@ export const tours = [
     minAge: 16,
     maxPeople: 12,
     price: 2200,
+    shortDescription:
+      "Experience an exceptional high-altitude journey — the Yak Safari in Shimshal Valley, one of the most isolated and spectacular regions within the Karakoram Range.",
     description:
-      "We are excited to offer an exceptional high-altitude journey — the Yak Safari in Shimshal Valley, one of the most isolated and spectacular regions within the Karakoram Range. This unique expedition takes you deep into untouched mountain terrain, where you travel alongside yaks - the lifeline of local communities - across glaciers, alpine meadows, and rugged trails. It is a rare opportunity to experience nature, culture, and adventure in one of Pakistan's last true wilderness areas. Journey along remote valleys shaped by the powerful Indus River system and explore landscapes surrounded by some of the world's highest peaks. This experience combines trekking, cultural immersion, and high-altitude exploration, making it ideal for travelers seeking something beyond conventional tours.",
+      "We are excited to offer an exceptional high-altitude journey — the Yak Safari in Shimshal Valley, one of the most isolated and spectacular regions within the Karakoram Range. This unique expedition takes you deep into untouched mountain terrain, where you travel alongside yaks - the lifeline of local communities - across glaciers, alpine meadows, and rugged trails. It is a rare opportunity to experience nature, culture, and adventure in one of Pakistan’s last true wilderness areas. Journey along remote valleys shaped by the powerful Indus River system and explore landscapes surrounded by some of the world’s highest peaks. This experience combines trekking, cultural immersion, and high-altitude exploration, making it ideal for travelers seeking something beyond conventional tours.",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1080,6 +1100,108 @@ export const tours = [
       },
     ],
   },
+  {
+    id: 11,
+    city: "Kashmir",
+    title: "Islamabad Murree Neelum",
+    fullTitle: "05 Days Islamabad, Murree & Neelum Valley Kashmir Tour",
+    rating: 5,
+    reviews: 0,
+    minAge: 8,
+    maxPeople: 25,
+    price: 520,
+    shortDescription:
+      "Experience the ultimate Northern Pakistan adventure on this 5-day tour covering Islamabad, Murree, and Neelum Valley Kashmir. From the bustling capital to the lush green hills of Murree and the turquoise rivers of Neelum Valley, this tour offers breathtaking landscapes, cultural experiences, and adventure activities. Perfect for families, honeymooners, and nature lovers.",
+    description: "Experience the ultimate Northern Pakistan adventure on this 5-day tour covering Islamabad, Murree, and Neelum Valley Kashmir. From the bustling capital to the lush green hills of Murree and the turquoise rivers of Neelum Valley, this tour offers breathtaking landscapes, cultural experiences, and adventure activities. Perfect for families, honeymooners, and nature lovers.",
+    description2: "Explore serene hill stations, scenic drives, charming villages, and riverside spots while capturing photography-worthy views. Enjoy comfortable travel, local delicacies, and immersive cultural experiences on this unforgettable road trip.",
+    highlights:"Scenic drive through Murree’s famous hill stations. Explore Neelum Valley’s rivers, mountains, and villages. Cultural immersion in authentic Kashmiri communities. Ideal for families, honeymooners, and nature enthusiasts. Comfortable land transport throughout the journey",
+    images: [
+      "/assets/tours/tour1.png",
+      "/assets/tours/tour2.png",
+      "/assets/tours/tour3.png",
+      "/assets/tours/tour4.png",
+      "/assets/tours/tour5.png",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Islamabad – Khanpur Lake – Islamabad",
+        description:
+          "Early morning departure from Islamabad. Visit Taxila Museum to explore Gandhara civilization artifacts. Boating and optional cliff diving at Khanpur Dam. Sightseeing in Islamabad: Faisal Mosque and Pir Sohawa (Monal). Overnight stay in Islamabad.",
+      },
+      {
+        day: 2,
+        title: "Islamabad – Murree",
+        description:
+          "Drive to Murree, the scenic hill station. Explore Mall Road, local shopping, and street views. Optional chair lift ride at Lower Patriata (New Murree). Overnight stay in Murree.",
+      },
+      {
+        day: 3,
+        title: "Murree – Neelum Valley (Sharda)",
+        description:
+          "Depart for Neelum Valley with a tea stop at Kohala. Drive through Muzaffarabad along the scenic Neelum River. Arrive in Sharda for overnight stay.",
+      },
+      {
+        day: 4,
+        title: "Sharda – Keran Valley",
+        description:
+          "Morning sightseeing in Sharda Valley's rivers and landscapes. Drive to Keran Valley, explore local beauty and nature spots. Overnight stay in Keran.",
+      },
+      {
+        day: 5,
+        title: "Keran Valley – Islamabad",
+        description:
+          "Depart for Islamabad. Drop-off at hotel or airport. Conclude your scenic Northern Pakistan tour.",
+      },
+    ],
+    included: [
+      "Accommodation: 3-Star Hotels & Guesthouses",
+      "Transportation: Private Vehicle",
+      "Guide: English-Speaking Guide",
+      "Entry Tickets: Taxila Museum",
+      "Meals: Breakfast Daily",
+    ],
+    notIncluded: [
+      "Flights",
+      "Lunch & Dinner",
+      "Boating & Cliff Diving Fees at Khanpur Dam",
+      "Chair Lift at Patriata",
+      "Personal Expenses",
+      "Travel Insurance",
+      "Tips",
+    ],
+    faqs: [
+      {
+        q: "What is the best time to visit Neelum Valley?",
+        a: "The best time to visit Neelum Valley is from May to September when the weather is pleasant and roads are open.",
+      },
+      {
+        q: "Is this tour suitable for families?",
+        a: "Yes, this tour is perfect for families, honeymooners, and couples looking for a scenic getaway.",
+      },
+      {
+        q: "What should I pack for this tour?",
+        format: "bullets",
+        intro: "We recommend packing:",
+        a: "Light clothes for daytime\nWarm jacket for Murree and Neelum evenings\nComfortable walking shoes\nSunscreen and sunglasses\nCamera\nPower bank",
+      },
+    ],
+    relatedTours: [
+      {
+        id: 5,
+        title: "5-Day Islamabad & Murree Hills Tour",
+        price: 400,
+        img: "/assets/tours/tour1.png",
+      },
+      {
+        id: 16,
+        title: "15 Days Ultimate Pakistan Cultural & Adventure Tour",
+        price: 2200,
+        img: "/assets/tours/tour1.png",
+      },
+    ],
+  },
+  
   {
     id: 12,
     city: "Skardu",
