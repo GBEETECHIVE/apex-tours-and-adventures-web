@@ -111,8 +111,43 @@ export default function DetailTab({ tour, sectionRefs }) {
         <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
           {tour.description}
         </p>
+        {tour.description2 && (
+          <p
+            style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}
+          >
+            {tour.description2}
+          </p>
+        )}
+      {tour.highlights && (  <SectionHeading>Highlights</SectionHeading>)}
+        {tour.highlights && (
+          <ol
+            style={{
+              marginBottom: 20,
+              listStyleType: "disc",
+              listStylePosition: "inside",
+              paddingLeft: 0,
+            }}
+          >
+            {tour.highlights
+              .split(/(?<=\.)\s+/)
+              .map((s) => s.trim())
+              .filter(Boolean)
+              .map((sentence, i) => (
+                <li
+                  key={i}
+                  style={{
+                    fontSize: 14,
+                    color: "#555",
+                    margin: "0 0 4px 0",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {sentence}
+                </li>
+              ))}
+          </ol>
+        )}
       </div>
-
       {/* ITINERARY SECTION */}
       <div ref={sectionRefs.Itinerary}>
         <SectionHeading>Itinerary</SectionHeading>
@@ -123,12 +158,20 @@ export default function DetailTab({ tour, sectionRefs }) {
             .filter(Boolean);
 
           return (
-            <div key={item.day} style={{ marginBottom: 20 }}>
+            <ol
+              key={item.day}
+              style={{
+                marginBottom: 20,
+                listStyleType: "disc",
+                listStylePosition: "inside",
+                paddingLeft: 0,
+              }}
+            >
               <p style={{ fontWeight: 700, fontSize: 14, margin: "0 0 6px 0" }}>
                 Day {item.day}: {item.title}
               </p>
               {sentences.map((s, i) => (
-                <p
+                <li
                   key={i}
                   style={{
                     fontSize: 14,
@@ -138,16 +181,15 @@ export default function DetailTab({ tour, sectionRefs }) {
                   }}
                 >
                   {s}
-                </p>
+                </li>
               ))}
-            </div>
+            </ol>
           );
         })}
       </div>
-,
-      {/* WHAT'S INCLUDED */}
+      ,{/* WHAT'S INCLUDED */}
       <SectionHeading>What's Included</SectionHeading>
-      <ol style={{ margin: 0, paddingLeft: 20,listStyleType: "disc" }}>
+      <ol style={{ margin: 0, paddingLeft: 20, listStyleType: "disc" }}>
         {tour.included.map((item, i) => {
           const { label, rest } = splitLabel(item);
           return (
@@ -171,10 +213,17 @@ export default function DetailTab({ tour, sectionRefs }) {
           );
         })}
       </ol>
-
       {/* WHAT'S NOT INCLUDED */}
       <SectionHeading>What's Not Included</SectionHeading>
-      <ul style={{ margin: 0, paddingLeft: 20 }}>
+      <ol
+        style={{
+          margin: 0,
+          paddingLeft: 20,
+          listStyleType: "disc",
+          listStylePosition: "inside",
+          paddingLeft: 0,
+        }}
+      >
         {tour.notIncluded.map((item, i) => (
           <li
             key={i}
@@ -188,11 +237,18 @@ export default function DetailTab({ tour, sectionRefs }) {
             {item}
           </li>
         ))}
-      </ul>
-
+      </ol>
       {/* VISA GUIDE */}
       <SectionHeading>Visa Guide</SectionHeading>
-      <ul style={{ margin: 0, paddingLeft: 20 }}>
+      <ol
+        style={{
+          margin: 0,
+          paddingLeft: 20,
+          listStyleType: "disc",
+          listStylePosition: "inside",
+          paddingLeft: 0,
+        }}
+      >
         <li
           style={{
             fontSize: 14,
@@ -223,8 +279,7 @@ export default function DetailTab({ tour, sectionRefs }) {
           If you're having trouble with your visa application, reach out to us
           for help and guidance.
         </li>
-      </ul>
-
+      </ol>
       {/* FAQ SECTION */}
       <div ref={sectionRefs.FAQ}>
         <SectionHeading>FAQ</SectionHeading>
@@ -244,7 +299,6 @@ export default function DetailTab({ tour, sectionRefs }) {
           </div>
         ))}
       </div>
-
       {/* TOUR GUIDE SECTION */}
       <div ref={sectionRefs["Tour Guide"]}>
         <SectionHeading>Tour Guide</SectionHeading>
@@ -254,7 +308,6 @@ export default function DetailTab({ tour, sectionRefs }) {
           passionate about sharing the rich history and culture of {tour.city}.
         </p>
       </div>
-
       {/* REVIEWS SECTION */}
       <div ref={sectionRefs.Reviews}>
         <SectionHeading>Reviews</SectionHeading>
@@ -264,7 +317,6 @@ export default function DetailTab({ tour, sectionRefs }) {
             : "No reviews yet. Be the first to review this tour!"}
         </p>
       </div>
-
       {/* RELATED TOURS */}
       {tour.relatedTours.length > 0 && (
         <>

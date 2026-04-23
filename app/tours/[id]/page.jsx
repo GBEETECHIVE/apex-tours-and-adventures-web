@@ -79,6 +79,7 @@ export default function TourDetailPage() {
         title={tour.city}
         fullTitle={tour.fullTitle}
         description={tour.description}
+        shortDescription={tour.shortDescription}
         backgroundImage="/assets/Background.png"
         details={true}
       />
