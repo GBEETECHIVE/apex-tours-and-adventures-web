@@ -112,11 +112,41 @@ export default function DetailTab({ tour, sectionRefs }) {
           {tour.description}
         </p>
         {tour.description2 && (
-          <p style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}>
+          <p
+            style={{ fontSize: 14, color: "#555", lineHeight: 1.85, margin: 0 }}
+          >
             {tour.description2}
           </p>
         )}
-        
+      {tour.highlights && (  <SectionHeading>Highlights</SectionHeading>)}
+        {tour.highlights && (
+          <ol
+            style={{
+              marginBottom: 20,
+              listStyleType: "disc",
+              listStylePosition: "inside",
+              paddingLeft: 0,
+            }}
+          >
+            {tour.highlights
+              .split(/(?<=\.)\s+/)
+              .map((s) => s.trim())
+              .filter(Boolean)
+              .map((sentence, i) => (
+                <li
+                  key={i}
+                  style={{
+                    fontSize: 14,
+                    color: "#555",
+                    margin: "0 0 4px 0",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {sentence}
+                </li>
+              ))}
+          </ol>
+        )}
       </div>
       {/* ITINERARY SECTION */}
       <div ref={sectionRefs.Itinerary}>

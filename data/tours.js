@@ -1112,9 +1112,12 @@ export const tours = [
     price: 520,
     shortDescription:
       "Experience the ultimate Northern Pakistan adventure on this 5-day tour covering Islamabad, Murree, and Neelum Valley Kashmir. From the bustling capital to the lush green hills of Murree and the turquoise rivers of Neelum Valley, this tour offers breathtaking landscapes, cultural experiences, and adventure activities. Perfect for families, honeymooners, and nature lovers.",
-    description: "Experience the ultimate Northern Pakistan adventure on this 5-day tour covering Islamabad, Murree, and Neelum Valley Kashmir. From the bustling capital to the lush green hills of Murree and the turquoise rivers of Neelum Valley, this tour offers breathtaking landscapes, cultural experiences, and adventure activities. Perfect for families, honeymooners, and nature lovers.",
-    description2: "Explore serene hill stations, scenic drives, charming villages, and riverside spots while capturing photography-worthy views. Enjoy comfortable travel, local delicacies, and immersive cultural experiences on this unforgettable road trip.",
-    highlights:"Scenic drive through Murree’s famous hill stations. Explore Neelum Valley’s rivers, mountains, and villages. Cultural immersion in authentic Kashmiri communities. Ideal for families, honeymooners, and nature enthusiasts. Comfortable land transport throughout the journey",
+    description:
+      "Experience the ultimate Northern Pakistan adventure on this 5-day tour covering Islamabad, Murree, and Neelum Valley Kashmir. From the bustling capital to the lush green hills of Murree and the turquoise rivers of Neelum Valley, this tour offers breathtaking landscapes, cultural experiences, and adventure activities. Perfect for families, honeymooners, and nature lovers.",
+    description2:
+      "Explore serene hill stations, scenic drives, charming villages, and riverside spots while capturing photography-worthy views. Enjoy comfortable travel, local delicacies, and immersive cultural experiences on this unforgettable road trip.",
+    highlights:
+      "Scenic drive through Murree’s famous hill stations. Explore Neelum Valley’s rivers, mountains, and villages. Cultural immersion in authentic Kashmiri communities. Ideal for families, honeymooners, and nature enthusiasts. Comfortable land transport throughout the journey",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1201,7 +1204,7 @@ export const tours = [
       },
     ],
   },
-  
+
   {
     id: 12,
     city: "Skardu",
@@ -1212,8 +1215,14 @@ export const tours = [
     minAge: 12,
     maxPeople: 20,
     price: 950,
+    shortDescription:
+      "Explore the stunning landscapes of Deosai National Park, Skardu, and Kaghan Valley on this 7-day wildlife adventure.",
     description:
-      "Embark on an unforgettable 7-day wildlife adventure in Northern Pakistan, exploring the stunning landscapes of Deosai National Park, Skardu, and Kaghan Valley. Travel through lush valleys, cross the high-altitude Babusar Pass, and camp under starry skies on the vast Deosai Plains. Enjoy light hikes, jeep safaris, local sightseeing, and authentic cultural experiences. Ideal for nature enthusiasts, wildlife photographers, and adventure travelers, this tour offers encounters with Himalayan marmots, alpine flora, and pristine lakes. Travel comfortably by jeep or join via road from Islamabad, with optional flights to Skardu. Best visited between mid-July and September when the meadows bloom with wildflowers.",
+      "Embark on an unforgettable 7-day wildlife adventure in Northern Pakistan, exploring the stunning landscapes of Deosai National Park, Skardu, and Kaghan Valley. Travel through lush valleys, cross the high-altitude Babusar Pass, and camp under starry skies on the vast Deosai Plains. Enjoy light hikes, jeep safaris, local sightseeing, and authentic cultural experiences.",
+    description2:
+      "Ideal for nature enthusiasts, wildlife photographers, and adventure travelers, this tour offers encounters with Himalayan marmots, alpine flora, and pristine lakes. Travel comfortably by jeep or join via road from Islamabad, with optional flights to Skardu. Best visited between mid-July and September when the meadows bloom with wildflowers",
+    highlights:
+      "Scenic Valleys & Passes: Drive through Kaghan Valley, Lulusar Lake, and Babusar Pass. Jeep Safari & Camping: Explore Deosai Plains and camp at Bara Pani under the stars. Nature & Wildlife: Spot Himalayan marmots, trout-filled streams, and colorful alpine flora. Deosai Activities: Enjoy fishing, BBQs, sunrise & sunset photography, and short hikes. Skardu Excursions: Visit Shangrila Resort (Lower Kachura Lake), Kharpocho Fort, and Shigar Desert. Cultural Experiences: Savor local cuisine and meet friendly communities in Skardu and Kaghan ",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1329,8 +1338,14 @@ export const tours = [
     minAge: 10,
     maxPeople: 20,
     price: 1350,
+    shortDescription:
+      "Experience a 9-day adventure through Skardu, Hunza, and Gojal Valleys.",
     description:
-      "Embark on an unforgettable 9-day adventure through Skardu, Hunza, and Gojal Valleys, exploring the majestic peaks of the Karakoram, Himalaya, and Hindukush ranges. This jeep safari takes you across remote valleys, winding mountain roads, and hidden trails, offering a mix of adventure, culture, and breathtaking scenery. Begin in Naran Valley, discovering Shogran's green plateaus and the magical Lake Saiful Maluk. Cross Babusar Pass into the Karakoram, reaching Skardu to explore turquoise lakes, Tibetan-style villages, and historical sites. Continue to Hunza Valley, visiting Baltit and Altit Forts, panoramic viewpoints, and Khunjerab Pass, the highest paved border crossing in the world. Experience light treks, jeep safaris, cultural immersion, and photography opportunities at every turn. Ideal for adventure travelers, photographers, and those seeking the natural beauty of Northern Pakistan.",
+      "Embark on an unforgettable 9-day adventure through Skardu, Hunza, and Gojal Valleys, exploring the majestic peaks of the Karakoram, Himalaya, and Hindukush ranges. This jeep safari takes you across remote valleys, winding mountain roads, and hidden trails, offering a mix of adventure, culture, and breathtaking scenery. Begin in Naran Valley, discovering Shogran’s green plateaus and the magical Lake Saiful Maluk. Cross Babusar Pass into the Karakoram, reaching Skardu to explore turquoise lakes, Tibetan-style villages, and historical sites. Continue to Hunza Valley, visiting Baltit and Altit Forts, panoramic viewpoints, and Khunjerab Pass, the highest paved border crossing in the world.",
+    description2:
+      "Experience light treks, jeep safaris, cultural immersion, and photography opportunities at every turn. Ideal for adventure travelers, photographers, and those seeking the natural beauty of Northern Pakistan.",
+    highlights:
+      "Jeep Safari through Skardu & Hunza Valleys. Explore Shogran, Lake Saiful Maluk, Babusar Pass, and Skardu’s scenic lakes. Visit historical sites: Baltit Fort, Altit Fort, Kharpocho Fort. Discover Hunza & Gojal’s hidden gems: Attabad Lake, Hussaini Suspension Bridge, Borith Lake. Panoramic viewpoints of Rakaposhi, Golden Peak, and Nagar Valley. Light treks, cultural experiences, and photography opportunities. Comfortable travel via jeep and scenic flights. Accommodation at Apex Hotels & Resorts Skardu, Apex Hotels & Resorts Attabad Lake, Apex Hotels & Resorts Hussaini Gojal",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1467,8 +1482,14 @@ export const tours = [
     minAge: 8,
     maxPeople: 25,
     price: 850,
+    shortDescription:
+      "Explore the untouched wilderness of Deosai National Park on this 7-day light-adventure tour.",
     description:
-      "Experience the untouched wilderness of Deosai National Park on this 7-day light-adventure tour, perfect for families, friends, couples, students, and nature lovers. Known as the 'Land of Giants,' Deosai sits at an average elevation of 4,000 meters, offering expansive green meadows, sparkling streams, rolling hills, and panoramic mountain backdrops. A must-visit destination in Northern Pakistan, Deosai is snow-covered for nearly seven months. The best time to visit is July to September, when wildflowers bloom, wildlife emerges, and the landscape comes alive with vibrant colors. Located at the intersection of the Himalaya and Karakoram ranges, Deosai is ideal for camping, jeep safaris, wildlife photography, stargazing, and nature exploration. Whether seeking tranquility, adventure, or a family-friendly getaway, this tour promises memorable experiences in Northern Pakistan's magical landscapes.",
+      "Experience the untouched wilderness of Deosai National Park on this 7-day light-adventure tour, perfect for families, friends, couples, students, and nature lovers. Known as the “Land of Giants,” Deosai sits at an average elevation of 4,000 meters, offering expansive green meadows, sparkling streams, rolling hills, and panoramic mountain backdrops. A must-visit destination in Northern Pakistan, Deosai is snow-covered for nearly seven months. The best time to visit is July to September, when wildflowers bloom, wildlife emerges, and the landscape comes alive with vibrant colors. Located at the intersection of the Himalaya and Karakoram ranges, Deosai is ideal for camping, jeep safaris, wildlife photography, stargazing, and nature exploration.",
+    description2:
+      "Travel options: ● By Road: Scenic drive through Pakistan’s most beautiful valleys ● By Air: Short flight from Islamabad to Skardu (upon request) Whether seeking tranquility, adventure, or a family-friendly getaway, this tour promises memorable experiences in Northern Pakistan’s magical landscapes.",
+    highlights:
+      "Overnight camping in Deosai National Park. Jeep safari across high-altitude plains. Wildlife sightseeing, including Himalayan brown bears and marmots. Family-friendly activities and nature exploration. Photography opportunities with sunrise & sunset over the plains. Accommodation at Apex Hotels & Resorts Skardu and partner properties",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1598,8 +1619,14 @@ export const tours = [
     minAge: 8,
     maxPeople: 25,
     price: 980,
+    shortDescription:
+      "Discover the breathtaking landscapes of Gilgit Baltistan",
     description:
-      "Discover the breathtaking landscapes of Gilgit Baltistan on this 8-day soft-adventure tour, exploring Hunza Valley, Nagar Valley, Naltar Valley, and Fairy Meadows. This journey combines scenic drives, light trekking, cultural immersion, and unforgettable high-altitude experiences along the Karakoram, Himalaya, and Hindukush ranges. The tour highlights Karimabad, Baltit Fort, Altit Fort, Hopper Glacier, Attabad Lake, Khunjerab Pass, and the colorful alpine lakes of Naltar Valley. Optional activities include jeep rides, short hikes, boating, walking across the Hussaini Suspension Bridge, and interacting with local communities. Ideal for travelers seeking a relaxed yet immersive experience in Northern Pakistan, with comfortable stays at Apex Hotels & Resorts Hunza and Apex Hotels & Resorts Skardu, ensuring premium hospitality in these iconic mountain destinations.",
+      "Discover the breathtaking landscapes of Gilgit Baltistan on this 8-day soft-adventure tour, exploring Hunza Valley, Nagar Valley, Naltar Valley, and Fairy Meadows. This journey combines scenic drives, light trekking, cultural immersion, and unforgettable high-altitude experiences along the Karakoram, Himalaya, and Hindukush ranges. The tour highlights Karimabad, Baltit Fort, Altit Fort, Hopper Glacier, Attabad Lake, Khunjerab Pass, and the colorful alpine lakes of Naltar Valley. Optional activities include jeep rides, short hikes, boating, walking across the Hussaini Suspension Bridge, and interacting with local communities.",
+    description2:
+      "Ideal for travelers seeking a relaxed yet immersive experience in Northern Pakistan, with comfortable stays at Apex Hotels & Resorts Hunza and Apex Hotels & Resorts Skardu, ensuring premium hospitality in these iconic mountain destinations.",
+    highlights:
+      "Explore Hunza, Nagar, Naltar Valley, and Fairy Meadows. Visit historic sites: Baltit Fort, Altit Fort. High-altitude experience at Khunjerab Pass (Pakistan–China border). Scenic drives along Karakoram Highway and mountain passes. Optional jeep rides, short hikes, and boating at Attabad Lake. Wildlife and alpine photography opportunities. Accommodation at Apex Hotels & Resorts Itinerary",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
@@ -1736,7 +1763,10 @@ export const tours = [
     maxPeople: 20,
     price: 2200,
     description:
-      "Experience an epic 15-day journey across Pakistan, combining rich history, vibrant culture, and breathtaking natural landscapes. From the historic streets of Lahore to the serene valleys of Hunza and Skardu, this tour showcases the country's most iconic destinations. Explore ancient forts, bustling bazaars, local villages, and high-altitude landscapes. Trek to the majestic Rakaposhi Base Camp, walk across thrilling suspension bridges, and enjoy panoramic views of snow-capped peaks. Relax by alpine lakes, camp in pristine nature, and immerse yourself in centuries-old traditions. This tour is perfect for travelers seeking culture, adventure, and natural beauty in one unforgettable experience, with premium stays at Apex Hotels & Resorts.",
+      "Experience an epic 15-day journey across Pakistan, combining rich history, vibrant culture, and breathtaking natural landscapes. From the historic streets of Lahore to the serene valleys of Hunza and Skardu, this tour showcases the country’s most iconic destinations",
+    description2:
+      "Explore ancient forts, bustling bazaars, local villages, and high-altitude landscapes. Trek to the majestic Rakaposhi Base Camp, walk across thrilling suspension bridges, and enjoy panoramic views of snow-capped peaks. Relax by alpine lakes, camp in pristine nature, and immerse yourself in centuries-old traditions. This tour is perfect for travelers seeking culture, adventure, and natural beauty in one unforgettable experience, with premium stays at Apex Hotels & Resorts",
+    highlights:"Explore Lahore Fort, Badshahi Mosque, and Walled City. Visit Hunza Valley, Baltit & Altit Forts, Duikar viewpoint. Excursion to Gojal Valley, Attabad Lake, Passu Cones & Hussaini Suspension Bridge. Discover Skardu Valley, Kharpocho Fort, Upper Kachura Lake, Sadpara Lake, Katpana Desert. Scenic drives along Karakoram Highway, Babusar Pass, and the Silk Route. Optional trekking, cultural interactions, and photography opportunities. Comfortable stays at Apex Hotels & Resorts",
     images: [
       "/assets/tours/tour1.png",
       "/assets/tours/tour2.png",
