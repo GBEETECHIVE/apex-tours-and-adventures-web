@@ -4,6 +4,7 @@ import ExperienceSection from "../components/ExperienceSection";
 import AboutSection from "../components/AboutSection";
 import PopularToursSection from "../components/PopularToursSection";
 import CustomerReviews from "../components/CustomerReviews";
+import Footer from "../components/Footer"
 export default function Home() {
   return (
     <main>
@@ -23,6 +24,7 @@ export default function Home() {
 <AboutSection />
 <PopularToursSection />
 <CustomerReviews />
+<Footer/>
     </main>
   );
 }

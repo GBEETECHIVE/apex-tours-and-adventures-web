@@ -2,7 +2,7 @@ import Hero from "../../components/Hero";
 import OurStory from "../../components/OurStory";
 import ApexTours from "../../components/ApexTours";
 import TeamSection from "../../components/TeamSection";
-
+import Footer from "../../components/Footer";
 
 export default function About() {
   return (
@@ -20,6 +20,7 @@ export default function About() {
       <OurStory/>
       <ApexTours/>
       <TeamSection/>
+      <Footer/>
     </main>
    
   );
