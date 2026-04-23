@@ -58,7 +58,7 @@ export default function ExperienceSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-[#243f5d] text-[18px] font-semibold sm:text-[20px] lg:text-[18px]  uppercase tracking-[2px] leading-snug mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
+    <h3 className="text-[#243f5d] text-[18px] font-semibold sm:text-[20px] lg:text-[18px] uppercase tracking-[2px] leading-snug mb-6 text-center break-words">
   {item.title}
 </h3>
 
